@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ride_my_way/static/css/main.4e50f333.chunk.css",
+    "main.js": "/ride_my_way/static/js/main.20dc0c46.chunk.js",
+    "main.js.map": "/ride_my_way/static/js/main.20dc0c46.chunk.js.map",
+    "runtime-main.js": "/ride_my_way/static/js/runtime-main.2015183f.js",
+    "runtime-main.js.map": "/ride_my_way/static/js/runtime-main.2015183f.js.map",
+    "static/js/2.20b1f731.chunk.js": "/ride_my_way/static/js/2.20b1f731.chunk.js",
+    "static/js/2.20b1f731.chunk.js.map": "/ride_my_way/static/js/2.20b1f731.chunk.js.map",
+    "index.html": "/ride_my_way/index.html",
+    "static/css/main.4e50f333.chunk.css.map": "/ride_my_way/static/css/main.4e50f333.chunk.css.map",
+    "static/js/2.20b1f731.chunk.js.LICENSE.txt": "/ride_my_way/static/js/2.20b1f731.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/ride_my_way/static/media/hero_1_a.1e0fe031.jpg",
+    "static/media/jonas-zurcher-yhxanIx21aQ-unsplash.610606f3.jpg": "/ride_my_way/static/media/jonas-zurcher-yhxanIx21aQ-unsplash.610606f3.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2015183f.js",
+    "static/js/2.20b1f731.chunk.js",
+    "static/css/main.4e50f333.chunk.css",
+    "static/js/main.20dc0c46.chunk.js"
+  ]
+}
