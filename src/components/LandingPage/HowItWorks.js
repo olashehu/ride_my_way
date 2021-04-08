@@ -26,7 +26,7 @@ const HowItWorks = () => {
             </div>
             <div className="fourth-child">
             <span style={{color:"#0090FF", fontWeight:"bold", marginBottom:"1.5rem"}}>04.</span>
-            <h2 className="card-guide" style={{marginBottom:'2.2rem'}}>Make a payment</h2>
+            <h2 className="card-guide" style={{marginBottom:'2.2rem'}}>Wait For Your Ride To Arrive</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laboriosam!</p>
             </div>
             </section>

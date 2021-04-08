@@ -7,7 +7,7 @@ const cars =[{
     Availability:"Lagos",
     passenger: "3",
     image:
-    'https://images.unsplash.com/photo-1598889933677-e433366327f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80',
+    'https://images.unsplash.com/photo-1502654253-6a533f295544?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
 }, 
 {
     id: 2,
@@ -25,7 +25,7 @@ const cars =[{
     Availability:"Ibadan",
     passenger: "1",
     image:
-      'https://images.unsplash.com/photo-1598195221927-fc335f446870?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80',
+      'https://images.unsplash.com/photo-1491921125492-f0b9c835b699?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80',
 },
 {
     id: 4,
@@ -61,7 +61,7 @@ const cars =[{
     Availability:"Lagos",
     passenger:"1",
     image:
-      'https://images.unsplash.com/photo-1563059999-9bcd13ce672d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80',
+      'https://images.unsplash.com/photo-1541747277704-ef7fb8e1a31c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80',
     
 },
 {
@@ -70,7 +70,7 @@ const cars =[{
     Price: "$200",
     Availability:"Abuja",
     image:
-    'https://images.unsplash.com/flagged/photo-1564153296137-400b51e1ff6d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1389&q=80',
+    'https://technext.ng/wp-content/uploads/2020/08/uber-driver-black-1024x576.jpg',
 }
 
 ]
@@ -79,15 +79,15 @@ const CarListing = () => {
         <div>
             <div style={{marginTop:"4rem"}}>
             <div className="how-it-works-header">
-            <h1 className="card-guide">Car Listings</h1>
+            <h1 className="card-guide">We Hire Best Drivers In The World</h1>
             <div className="underline"></div>
-            <p className="card-guide">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p className="card-guide">Your Safety Is Our Periority.</p>
             </div>
             </div>
         <div className="flex-car">
           {cars.map((car)=>{
-              const { id, name, Price, Availability, image} = car
-              return <Cars key={id} name={name} price={Price} Availability={Availability} image={image} />
+              const { id, name,  Availability, image} = car
+              return <Cars key={id} name={name}  Availability={Availability} image={image} />
           })}
         </div>
         </div>
@@ -105,15 +105,15 @@ export const Cars =(props) =>{
         <footer>
           <div className="tour-info">
             <h3 className="car-names">{props.name}</h3>
-            <h4 className="tour-price">{props.price}/day</h4>
+            {/* <h4 className="tour-price">{props.price}/day</h4> */}
           </div>
           <hr></hr>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.
           </p>
-            <button style={{width:"8rem", background:"rgb(0,123,255)", height:"4rem", borderRadius:"1rem",color:"white", outline:"none"}} >
-             Get Now
-            </button>
+            {/* <button style={{width:"8rem", background:"rgb(0,123,255)", height:"4rem", borderRadius:"1rem",color:"white", outline:"none"}} >
+             
+            </button> */}
     
     
         </footer>

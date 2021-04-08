@@ -1,24 +1,25 @@
-import { useState } from "react";
-import "./Dashboard.css";
-import Main from "../Dashboard/main/Main"
-import Navbar from "../Dashboard/main/navbar/Navbar"
-import Sidebar from "../Dashboard/main/navbar/sidebar/sidebar"
+import React from 'react';
+//import './App.css';
+import Sidebar from './Sidebar'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import DashHome from './pages/DashHome';
+import DashReport from './pages/DashReport'
+import AvailableDriver from './pages/AvailableDriver';
 
-const Dashboard = () => {
-  const [sidebarOpen, setsidebarOpen] = useState(false);
-  const openSidebar = () => {
-    setsidebarOpen(true);
-  };
-  const closeSidebar = () => {
-    setsidebarOpen(false);
-  };
+function Dashboard() {
   return (
-    <div className="container">
-      <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
-      <Main />
-      <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
-    </div>
+    <>
+      <Router>
+        <Sidebar />
+        <Switch>
+          <Route path='/' exact component={DashHome} />
+          <Route path='/report' component={DashReport} />
+          <Route path='/drivers' component={AvailableDriver} />
+          <Route path='/drivers' component={AvailableDriver} />
+        </Switch>
+      </Router>
+    </>
   );
-};
+}
 
 export default Dashboard;

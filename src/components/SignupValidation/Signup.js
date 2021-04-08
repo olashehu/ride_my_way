@@ -47,6 +47,16 @@ export const Signup = () => {
             required
             name="address"
           />
+          </div>
+          <div className="form-sign">
+          <label htmlFor="address" className="label-text">
+            Phone Number
+          </label>
+          <input
+            type="number"
+            required
+            name="number"
+          />
         </div>
         <div className="form-sign">
           <label htmlFor="email" className="label-text">
