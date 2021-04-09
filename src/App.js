@@ -4,7 +4,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Login from './components/LoginValidation/Login'
 import Signup from "./components/SignupValidation/Signup"
 import ForgetPassword from "./components/ForgetPassword"
-import Dashboard from './components/dashBoard/Dashboard'
+import Dashboard from './components//dashboard/Dashboard'
 import CarListing from "./components/LandingPage/CarListing";
 
 const App = () =>{

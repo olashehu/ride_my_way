@@ -1,25 +1,21 @@
-import React from 'react';
-//import './App.css';
-import Sidebar from './Sidebar'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import DashHome from './pages/DashHome';
-import DashReport from './pages/DashReport'
-import AvailableDriver from './pages/AvailableDriver';
+import DashboardHome from '../pages/DashboardHome'
+import AvailableDrivers from '../pages/AvailableDrivers'
+import Sidebar from './Sidebar'
 
-function Dashboard() {
-  return (
-    <>
-      <Router>
-        <Sidebar />
-        <Switch>
-          <Route path='/' exact component={DashHome} />
-          <Route path='/report' component={DashReport} />
-          <Route path='/drivers' component={AvailableDriver} />
-          <Route path='/drivers' component={AvailableDriver} />
-        </Switch>
-      </Router>
-    </>
-  );
+const Dashboard = () => {
+    return (
+        <div>
+         <Router>
+             <Sidebar />
+             <Switch>
+                 <Route path = '/homedashboard' component = {DashboardHome} />
+                 <Route path = '/driversAvailability' component = {AvailableDrivers} />
+             </Switch>
+         </Router>
+        </div>
+    )
 }
 
-export default Dashboard;
+export default Dashboard
