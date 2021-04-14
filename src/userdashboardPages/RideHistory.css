@@ -1,0 +1,12 @@
+div.ride-history {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 500px;
+}
+
+@media screen and(max-width: 400px){
+    div.ride-history {
+       margin-right: 0;
+       width: 100%;
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import BannerImg from "../../assest/jonas-zurcher-yhxanIx21aQ-unsplash.jpg"
+//import BannerImg from "../../assest/jonas-zurcher-yhxanIx21aQ-unsplash.jpg"
 const HowItWorks = () => {
     return (
         <div>
@@ -16,7 +16,7 @@ const HowItWorks = () => {
             </div>
             <div className="second-child">
             <span style={{color:"#0090FF", fontWeight:"bold", marginBottom:"1.5rem"}}>02.</span>
-            <h2 className="card-guide" style={{marginBottom:'2.2rem'}}>Select a car</h2>
+            <h2 className="card-guide" style={{marginBottom:'2.2rem'}}>Write where you are going</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laboriosam!</p>
             </div>
             <div className="third-child">
@@ -30,9 +30,9 @@ const HowItWorks = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laboriosam!</p>
             </div>
             </section>
-            <div style={{ marginTop:"4rem"}} className="img-container">
+            {/* <div style={{ marginTop:"4rem"}} className="img-container">
             <img src={BannerImg} alt="Logo" width= "100%" style={{justifyItems:'center'}} className="heading-primary-main" />
-            </div>
+            </div> */}
         </div>
     )
 }

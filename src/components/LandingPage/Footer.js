@@ -9,7 +9,7 @@ function Footer() {
                     <section className="footer-parent2">
                         <div className="webinar-parent">
                             <div className="main-webinar">
-                                Get your own Ride
+                                What are you waiting for?
                                 <a href="./">Get Started</a>
                             </div>
                         </div>
