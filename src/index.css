@@ -166,7 +166,7 @@ Variables
     color: #000;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 3rem;
     animation: moveInLeft;
     animation-duration: 2s;
   }
@@ -189,6 +189,7 @@ Variables
     display: inline-block;
     border-radius: 100px;
     position: relative;
+    bottom: 26px;
   }
   .btn:hover {
     transform: translateY(-3px);
@@ -300,8 +301,27 @@ Variables
     outline: none;
     border: none;
     transition: color 1000ms;
+    margin-bottom: 2rem;
     transition: background-color 500ms ease-in-out;
   }
+    .login-btn-cancel {
+      font-family: inherit;
+      width: 60%;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 17px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      color: white;
+      background-color: red;
+      display: block;
+      margin: auto;
+      list-style: none;
+      outline: none;
+      border: none;
+      transition: color 1000ms;
+      transition: background-color 500ms ease-in-out;
+    }
   .login-btn:hover {
     border: 1px solid red;
     color: red;

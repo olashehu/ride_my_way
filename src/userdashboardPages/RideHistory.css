@@ -1,12 +1,50 @@
 div.ride-history {
     margin-left: 200px;
-    padding: 1px 16px;
-    height: 500px;
+    /* padding: 1px 16px; */
+    height: 300px;
 }
+
+.rider {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.rider li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 30px;
+}
+
+
+.main-riders{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 2rem;
+}
+
+.main-riders img{
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media screen and(max-width: 400px){
     div.ride-history {
-       margin-right: 0;
+       margin: 0;
+       padding: 0;
        width: 100%;
     }
 }

@@ -44,22 +44,22 @@ function Footer() {
                         <div>
                             <a href="https://www.facebook.com/">
                                 <span>
-                                    <i class="fab fa-facebook"></i>
+                                    <i className="fab fa-facebook"></i>
                                 </span>
                             </a>
                             <a href="https://twitter.com/home">
                                 <span>
-                                    <i class="fab fa-twitter"></i>
+                                    <i className="fab fa-twitter"></i>
                                 </span>
                             </a>
                             <a href="https://www.youtube.com/">
                                 <span>
-                                    <i class="fab fa-youtube"></i>
+                                    <i className="fab fa-youtube"></i>
                                 </span>
                             </a>
                             <a  href="https://www.instagram.com/?hl=en">
                                 <span>
-                                    <i class="fab fa-instagram-square"></i>
+                                    <i className="fab fa-instagram-square"></i>
                                 </span>
                             </a>
                         </div>

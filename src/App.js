@@ -10,6 +10,7 @@ import RideHistory from './userdashboardPages/RideHistory'
 import DriversDashboardHome from './driversDashboard/DriversDashboardHome';
 import RideOffer from './userdashboardPages/RideOffer'
 import FromTo from './dashboard/From_To'
+import Notification from './userdashboardPages/Notification'
 
 const App = () =>{
   return (
@@ -17,13 +18,13 @@ const App = () =>{
       <Router>
        <Switch>
         <Route exact component={LandingPage} path='/' />
-        <Route component={UserDashboard} path="/userdashboard" />
-        {/* <Route component={LandingPage} path='/olashehu.github.io/ride_my_way' /> */}
+        <Route component = {UserDashboard} path="/userdashboard" />
+        <Route component = {Notification} path='/notification' />
         <Route component = {Login} path='/login' />
         <Route component = {Signup} path='/signup' />
         <Route component = {ForgetPassword} path='/forgetPassword' />
         <Route component = {CarListing} path='/listing' />
-        <Route component = {RideHistory} path = '/ridehistory'/>
+        <Route component = {RideHistory} exact path = '/ridehistory'/>
         <Route component = {DriversDashboardHome} path ='/driversdashboard' />
         <Route component = {RideOffer} path ='/rideoffer' />
         <Route component = {FromTo} path ='/destination' />

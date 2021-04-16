@@ -10,7 +10,7 @@ const Sidebar = () => {
               <Link to="/payment">Payment</Link>
              <Link to="/ridehistory">Ride History</Link>
              <Link to="/rideoffer">Ride Offer</Link>
-             <Link to="/about">Notification</Link>
+             <Link to="/notification">Notification</Link>
              <div className = 'signout'>
                  <a href="signout" className = 'logout'>Logout</a>
              </div>
