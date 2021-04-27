@@ -1,54 +1,54 @@
 body {
-    margin: 0;
     font-family: "Lato", sans-serif;
 }
 
-.sidebar {
+.sidebar-user {
     margin: 0;
     padding: 0;
     width: 200px;
     background-color: #f1f1f1;
-    position: fixed;
+     position: fixed;
+     top: 0; 
     height: 100%;
     overflow: auto;
 }
 
-.sidebar a {
+.sidebar-user a {
     display: block;
     color: black;
     padding: 16px;
     text-decoration: none;
 }
 
-.sidebar a.active {
+.sidebar-user a.active {
     background-color: rgb(0, 181, 255);
     color: white;
 }
 
-.sidebar a:hover:not(.active) {
+.sidebar-user a:hover:not(.active) {
     background-color: #555;
     color: white;
 }
 
 
 @media screen and (max-width: 700px) {
-    .sidebar {
+    .sidebar-user {
         width: 100%;
         height: auto;
         position: relative;
     }
 
-    .sidebar a {
+    .sidebar-user a {
         float: left;
     }
 
-    div.content {
+    /* div.content {
         margin-left: 0;
-    }
+    } */
 }
 
 @media screen and (max-width: 400px) {
-    .sidebar a {
+    .sidebar-user a {
         text-align: center;
         float: none;
     }

@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import { userNotification } from "./array";
+//import { userNotification } from "./array";
 import {navigate} from '@reach/router'
 
 
 
 
 export const FromTo = () => {
+  
     const [trip, setTrip] = useState([]);
     const defaultTrip = {from: '', to: ''};
     const [movement, setMovement] = useState(defaultTrip)
@@ -19,7 +20,7 @@ export const FromTo = () => {
         // userNotification.push(from, to)
         setTrip(prev => [movement, ...prev])
          console.log(trip)
-        // setMovement(defaultTrip)
+         setMovement(defaultTrip)
        
        
        navigate('/notification')
@@ -42,11 +43,11 @@ export const FromTo = () => {
       <div className="header">
         <h3>Destination</h3>
       </div>
-      {/* <form
+       <div
         action=""
-        className="main-form"
+        className="main-formss"
 
-      > */}
+      > 
         <div className="form">
           <label htmlFor="email" className="label-text">
             From
@@ -75,8 +76,8 @@ export const FromTo = () => {
         </div>
 
         <button className="login-btn" onClick={handleClick}>Submit</button>  
-      {/* </form> */}
-       <Link to = "/userdashboard"><button className="login-btn-cancel" >Cancel</button></Link>    
+       </div>
+       <Link to = "/user-dashboard"><button className="login-btn-cancel" >Cancel</button></Link>    
     </div>
     </div>
   );

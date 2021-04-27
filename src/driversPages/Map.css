@@ -1,0 +1,51 @@
+
+ .driver-map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.img_img{
+    width: 170px;
+}
+/*
+.d-name{
+ margin-left: 20px;
+ margin-bottom: 5px;
+}
+*/
+.person_driver{
+    display: flex;
+    align-items: center;
+}
+
+.sep{
+    margin: 20px;
+}
+
+.accept{
+    background-color: green;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    font-weight:bold;
+
+}
+
+.reject{
+    background-color: red;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    font-weight:bold;
+} 
+.ty > button{
+    margin: 10px;
+}

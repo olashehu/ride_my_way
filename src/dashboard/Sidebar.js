@@ -5,18 +5,15 @@ import './Sidebar.css'
 const Sidebar = () => {
     return (
         <div>
-            <div className="sidebar">
-             <Link to = '/userdashboard' className="active"> Home</Link>
+            <div className="sidebar-user">
+             {/* <Link to = '/userdashboard' className="active"> Home</Link> */}
+              <Link to="/user-dashboard" className="active">Ride History</Link>
+              <Link to="/rideoffer">Ride Offer</Link>
               <Link to="/payment">Payment</Link>
-             <Link to="/ridehistory">Ride History</Link>
-             <Link to="/rideoffer">Ride Offer</Link>
              <Link to="/notification">Notification</Link>
              <div className = 'signout'>
                  <a href="signout" className = 'logout'>Logout</a>
              </div>
-             {/* <div className = 'signin-to-drive'>
-                 <a href="driverSignin" className = 'become-a-driver'>Click to become a driver</a>
-             </div> */}
             </div>
         </div>
     )

@@ -1,114 +1,11 @@
-div.contents {
+ section.contents {
     margin-left: 200px;
     padding: 1px 16px;
     height: 500px;
-}
-
-.sidebar-img {
-    background-image: url('https://images.unsplash.com/photo-1588333197143-1dc8d5df1974?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1544&q=80');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50vh;
-}
-
-#sidebar-text {
-    margin-top: 6rem;
-}
-
-
-body {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-}
-
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
-
-.sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-}
-
-.sidebar a.active {
-    background-color: rgb(0, 181, 255);
-    color: white;
-}
-
-.sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-}
-/* Starting of dashboard form */
-.form-inline {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-}
-
-.form-inline label {
-    margin: 5px 10px 5px 0;
-}
-
-.form-inline input {
-    vertical-align: middle;
-    margin: 5px 10px 5px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-.form-inline button {
-    padding: 10px 20px;
-    background-color: dodgerblue;
-    border: 1px solid #ddd;
-    color: white;
-    cursor: pointer;
-}
-
-.form-inline button:hover {
-    background-color: royalblue;
-}
-
-@media (max-width: 700px) {
-    .form-inline input {
-        margin: 10px 0;
-    }
-
-    .form-inline {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
-/* End of dashboard form */
+} 
 
 @media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar a {
-        float: left;
-    }
-
-    div.contents {
+     section.contents {
         margin-left: 0;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
     }
 }

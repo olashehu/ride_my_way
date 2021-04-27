@@ -1,50 +1,51 @@
-div.ride-history {
-    margin-left: 200px;
+div.ride__history {
+     margin-left: 23%; 
     /* padding: 1px 16px; */
-    height: 300px;
+    /* height: 300px; */
+}
+.bg-color{
+    background-color:whitesmoke;
 }
 
-.rider {
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+.picture{
+    width: 390px;   
 }
 
-.rider li {
-    display: inline-block;
-    font-size: 20px;
-    padding: 30px;
+.rider-history{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  cursor: pointer;
+  /* margin-left: 10px; */
+  margin-top: 10px;
+  font-size: 1.3em;
+}
+.rider-history:hover{
+    border: 1px solid black;
+}
+.rider-history .first-child{
+    display: block;
 }
 
-
-.main-riders{
-    display: flex;
-    justify-content: space-around;
-    margin-right: 2rem;
+.rider-history> .second-child{
+     margin-left: 15%;
+    margin-top: 10px;  
 }
 
-.main-riders img{
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.second-child, img, span{
+    margin: 3px;
 }
-
-
-
-
-
-
-
-
-
 
 
 @media screen and(max-width: 400px){
-    div.ride-history {
-       margin: 0;
-       padding: 0;
-       width: 100%;
+    div.ride__history {
+       margin-left: 0;
+        width: 100%;
+       
+        
     }
-}
+    .rider-history>.second-child {
+      margin-left: 0;
+       color: red;
+    }
+} 

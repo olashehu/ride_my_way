@@ -1,18 +1,41 @@
-import React from 'react'
+import React,{useState} from 'react'
+import { Link } from 'react-router-dom'
+import DritopNav from './DritopNav'
+//import DriversDashboardHome from './DriversDashboardHome'
 import './DriversNavbar.css'
-import {Link} from 'react-router-dom'
+import Smallsidebar from './Smallsidebar'
 
-const DriversNavbar = () => {
+const DriversNavbar = (props) => {
+ const [toggle, setToggle] = useState(false)
+ const toggleFunc = ()=>{
+   setToggle(!toggle)
+ }
     return (
         <div>
-           <ul class="sidenav">
-             <li><Link to ='/driversdashboard' className="active">Home</Link></li>
-             <li><Link to = 'offer'>Available Driver</Link></li>
-              <li><Link to = 'offer'>Ride Offer</Link></li>
-             {/* <li><a href="#contact">Contact</a></li>
-             <li><a href="#about">About</a></li> */}
-            </ul>
+             
+              <div>
+               <div className={`${toggle ? 'dashboard-layout' : 'dashboard-layout2'}`}>
+                <DritopNav toggle={toggleFunc} className='topnav'/>
+               <div className='sidenav'>
+                   <div className="nav-link-container" style={{display: `${!toggle ? 'none' : ''}`}} >
+                 <Link to = '/driversdashboard' className="active">Home</Link>
+                 {/* <Link to = '/driver-history'>Ride History</Link> */}
+                 <Link to = '/settings'>Settings</Link>
+                 <Link to = '/'>Logout</Link>
+                 
+             </div>
+             <Smallsidebar switchDisplay={toggle}/>
+               </div>
+              <div className='child'>
+               {props.children}
+             </div>
+             </div>
+            
+             
+
         </div>
+        </div>
+       
     )
 }
 

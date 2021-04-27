@@ -1,0 +1,24 @@
+.dri-top-nav{
+    background-color: black;
+    /* display: block; */
+    width: 99vw;
+    height: 60px;
+    /* margin: auto; */
+    /* display: flex;
+    align-items: center; */
+}
+
+.top-navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+button.btn-btn{
+    margin-left: 10px;
+}
+
+/* .navbar-sidebar{
+     z-index: 999; 
+} */

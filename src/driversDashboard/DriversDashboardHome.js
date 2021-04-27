@@ -1,20 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Map from '../driversPages/Map'
+//import DritopNav from './DritopNav'
 import './DriversDashboardHome.css'
 import DriversNavbar from './DriversNavbar'
+//import Smallsidebar from './Smallsidebar'
 
 
 const DriversDashboardHome = () => {
+    const [togle, setTogle] = useState(150)
+    const [reject, setReject] = useState(0)
+    
+    const togleFunc = ()=>{
+        setTogle(togle + 1)
+    }
+
+    const decline = () => {
+        setReject(prev => prev + 1)
+    }
     return (
-        <div>
-            <DriversNavbar/>
-            <div class="content">
-             <h2>Responsive Sidenav Example</h2>
-             <p>This example use media queries to transform the sidenav to a top navigation bar when the screen size is 900px or less.</p>
-             <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
-             <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-             <h3>Resize the browser window to see the effect.</h3>
+        <DriversNavbar>    
+            <div className='content'>
+             {/* {toggle ? <DriversNavbar toggleMe={toggle}/> : <Smallsidebar toggle={toggle}/>} */}
+             <div  >
+                 <div>
+                     <div >
+               <h1>Welcome to Drivers dashboard</h1>
+               <div className = "dcontainer">
+                   <div className="flex-child">
+                      <p  style={{color:'white'}}>{togle}</p>
+                      <h4 style={{textAlign: 'center'}}>Accepted Reqeust</h4>
+                   </div>
+                   <div className="flex-child">
+                      <p  style={{color:'white'}}>{reject}</p>
+                      <h4 style={{textAlign: 'center'}}>Reject Request</h4>
+                   </div>
+                   <div className="flex-child">
+                       <p style={{color:'white'}}>50</p>
+                       <h4 style={{textAlign: 'center'}}>Likes</h4>
+                   </div>
+                   <div className="flex-child">
+                        <p  style={{color:'white'}}>50</p>
+                       <h4 style={{textAlign: 'center'}}>Rate</h4>
+                   </div>
+               </div>
+
+
+               <div>
+                   <Map click={togleFunc} change={decline}/>
+               </div>
+               
             </div> 
-        </div>
+
+                 </div>
+
+             </div>
+            </div>
+        </DriversNavbar>
     )
 }
 
