@@ -1,12 +1,38 @@
-   .driver-container{
-     margin-left: 22%;
- }
-.detail{
-    margin: 10px;
+.details-container {
+    width: 32%;
+    height: 500px;
+    margin-left: 1%;
 }
 
-.button-contact{
-    margin-top:40px;
+.driver-container{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: brown solid 2px; */
+    width: 100%;
+    margin-top: 1%;
+    
+}
+
+.details-container-child{
+     /* border: solid 1px yellow; */
+     text-align: center;
+     width: 100%;
+}
+.details-container-child2 {
+    width:98%;  
+    margin-left: 1%;
+}
+.details-container-child2 > div{
+    font-size: .9rem;
+    line-height: 1.3rem;
+}
+
+.link_destination {
+    padding: 0 10%;
+}
+
+.button-contact {
+    margin-top:20px;
     width:200px;
     height:50px;
     font-size:16px;
@@ -14,67 +40,48 @@
     color: white;
 }
 
-
 .button-contact:hover {
+    cursor: pointer;
     background-color: #555;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-.column { 
-    width: 300px;
-    margin-bottom: 16px;
-    padding: 0 8px;
-    display: flex;
-}
-
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
+@media screen and (max-width: 1024px) {
+    .user-sidenav-container1 {
+        position: absolute;
     }
-    .driver-component{
-        display: flex;
-        flex-direction: column;
+
+    .details-container {
+        width: 48%;
+        margin-left: 2%;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
+
 }
 
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+@media screen and (max-width: 414px) {
+
+    .user-small-sidebar {
+        display: none;
+    }
+    .details-container {
+        width: 96%;
+        margin-left: 3%;
+    }
+
+    .button-contact{
+        width: 80%;   
+    }
+
 }
 
-.container {
-    padding: 0 16px;
-}
 
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
 
-.title {
-    color: grey;
-}
 
- */
+
+
+
+
+
+

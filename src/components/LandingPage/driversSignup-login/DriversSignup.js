@@ -53,9 +53,9 @@ const DriversSignup = () => {
             Phone Number
           </label>
           <input
-            type="number"
+            type="tel"
             required
-            name="number"
+            name="telephone"
           />
         </div>
         <div className="pilot-sign">
@@ -83,10 +83,10 @@ const DriversSignup = () => {
         </div>
        
 
-        <button className="Sign-btn-pilot">Sign up</button>
+        <button className="Sign-btn-pilot">Next</button>
         <div className="terms-condition" style={{display:"flex", marginTop:"1.5rem"}}>
           <input type="checkbox" style={{marginRight:'1rem'}}/>
-          <p>I agree to the Terms and Conditions</p>
+          {/* <p>I agree to the Terms and Conditions</p> */}
         </div>
         <div className="have-account">
           <p>

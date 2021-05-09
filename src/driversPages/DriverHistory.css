@@ -1,0 +1,74 @@
+h1.header_history{
+    text-align: center;
+}
+.driver_setting_page{
+    /* margin-left: 3%; */
+    width: 97%;
+    height: 600px;
+}
+
+.trip-history-details-drivers{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 70%;
+    height: 90px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-left: 2.5%;
+
+}
+
+.column-span {
+    text-align: center;
+}
+
+ .same {
+    margin: 0 5%;
+} 
+
+.first___child-details{
+    width: 20%;
+}
+
+.second__child__details {
+    width: 55%;
+}
+
+.img-customer {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0px 20px
+}
+.color{
+    background-color: yellow;
+}
+
+
+
+@media screen and (max-width: 1024px){
+    .trip-history-details-drivers{
+       margin-left: 12%;
+    }
+    .second__child__details{
+        width: 50%;
+    }
+    .first___child-details{
+        width: 30%;
+    }
+} 
+
+@media screen and (max-width: 411px){
+
+     .trip-history-details-drivers {
+         margin-left: 1%;
+     }
+      .second__child__details {
+          width: 100%;
+      }
+
+      .first___child-details {
+          width: 100%;
+      }
+}

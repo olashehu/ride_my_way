@@ -21,7 +21,6 @@ const DriversDashboardHome = () => {
         <DriversNavbar>    
             <div className='content'>
              {/* {toggle ? <DriversNavbar toggleMe={toggle}/> : <Smallsidebar toggle={toggle}/>} */}
-             <div  >
                  <div>
                      <div >
                <h1>Welcome to Drivers dashboard</h1>
@@ -52,8 +51,6 @@ const DriversDashboardHome = () => {
             </div> 
 
                  </div>
-
-             </div>
             </div>
         </DriversNavbar>
     )

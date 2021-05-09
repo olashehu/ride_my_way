@@ -2,7 +2,6 @@
     margin-left: 22%;
 }
 .child_1{
-    /* border: solid 3px black; */
     display: flex;
     flex-flow: column wrap;
     justify-content: center;

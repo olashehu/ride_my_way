@@ -1,11 +1,11 @@
 div.ride__history {
-     margin-left: 23%; 
+     margin-left: 3%; 
     /* padding: 1px 16px; */
     /* height: 300px; */
 }
-.bg-color{
+/* .bg-color{
     background-color:whitesmoke;
-}
+} */
 
 .picture{
     width: 390px;   
@@ -16,28 +16,34 @@ div.ride__history {
   flex-wrap: wrap;
   position: relative;
   cursor: pointer;
-  /* margin-left: 10px; */
   margin-top: 10px;
   font-size: 1.3em;
 }
+
 .rider-history:hover{
     border: 1px solid black;
 }
-.rider-history .first-child{
+
+.rider-history .first-child {
     display: block;
 }
 
-.rider-history> .second-child{
+.rider-history> .second-child {
      margin-left: 15%;
     margin-top: 10px;  
 }
 
-.second-child, img, span{
+.second-child, img, span {
     margin: 3px;
 }
 
+@media screen and (max-width: 1024px) {
+    .div.ride__history{
+         margin-left: 10%;
+    }
+}
 
-@media screen and(max-width: 400px){
+@media screen and (max-width: 400px) {
     div.ride__history {
        margin-left: 0;
         width: 100%;

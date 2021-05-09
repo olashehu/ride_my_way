@@ -1,16 +1,16 @@
 import React from 'react'
-import Sidebar from '../dashboard/Sidebar'
 import '../dashboard/Sidebar.css'
+import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav'
 
 const Notification = () => {
     
     return (
-        <div>
-            <Sidebar/>
-            <div  className ='driver-component_container'>
-                <h1>Hello</h1>
-            </div>
+       <UsersSidebarNav>
+        <div  className ='driver-component_container'>
+            
         </div>
+       </UsersSidebarNav>
+    
     )
 }
 

@@ -1,0 +1,29 @@
+.nav-user-top{
+   background-color: #26BDFA;
+   height: 70px;
+   position: relative; 
+   width: 100%;
+}
+.me{
+    display: inline;
+    margin-top: 30px;
+     margin-left: 20px;
+}
+
+.profile-container{
+    position: absolute; 
+    right: 50px; 
+    top: 10px;
+}
+
+.profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 415px) {
+    .profile-container {
+        right: 0;
+    }
+}

@@ -1,8 +1,11 @@
 import React from 'react'
-import Sidebar from '../dashboard/Sidebar'
 import './RideHistory.css'
+import {AiFillCar} from 'react-icons/ai'
+import {FaRoad} from 'react-icons/fa'
+import { MdHistory } from "react-icons/md";
+import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav'
 //import '../dashboard/Sidebar.css'
-
+// import Sidebar from '../dashboard/Sidebar'
 const user = [
     {
         pic: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
@@ -45,8 +48,9 @@ const user = [
 
 const RideHistory = () => {
     return (
+        <UsersSidebarNav>
         <div className="bg-color">
-           <Sidebar/>
+           {/* <Sidebar/> */}
             <div className='ride__history'>
                 {user.map((lists, id)=>{
                    const {pic, name, mile, time, from, date} = lists
@@ -62,6 +66,7 @@ const RideHistory = () => {
                })} 
            </div>  
         </div>
+        </UsersSidebarNav>
     )
 }
 
@@ -78,15 +83,15 @@ export default RideHistory
           </div>
           <div className="second-child me">
               <div>
-                  <img src="" alt="icon"/>
+                  <AiFillCar />
                   <span>{props.from}</span>
               </div>
               <div>
-                  <img src="" alt="icon"/>
+                  <FaRoad />
                   <span>Mile: {props.mile}</span>
               </div>
               <div>
-                  <img src="" alt="icon"/>
+                  <MdHistory/>
                   <span>Departing: {props.time} - {props.date}</span>
               </div>
           </div>
