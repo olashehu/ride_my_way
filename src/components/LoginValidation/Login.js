@@ -43,7 +43,7 @@ export const Login = () => {
           
         </div>
 
-        <button className="login-btn">Login</button>
+        <Link to = '/user-dashboard'><button className="login-btn">Login</button></Link>
         <div className="forget-password-container">
           <a href="/forgetPassword">Forget password ?</a>
         </div>
