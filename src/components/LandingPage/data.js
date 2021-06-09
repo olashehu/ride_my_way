@@ -19,24 +19,25 @@ export const links = [
         url: '/about',
         text: 'about',
     },
-    {
-        id: 5,
-        url: '/contact',
-        text: 'contact',
-    },
-    {
-        id: 6,
-        url: '/blog',
-        text: 'blog',
-    },
+    // {
+    //     id: 5,
+    //     url: '/contact',
+    //     text: 'contact',
+    // },
+    // {
+    //     id: 6,
+    //     url: '/blog',
+    //     text: 'blog',
+    // },
+    
 ];
 
 
-export const authentication = [ {
-    id: 1,
-    name: "Signup",
-  },
-  {
-    id: 2,
-    name:"Login",
-  },]
+// export const authentication = [ {
+//     id: 1,
+//     name: "Signup",
+//   },
+//   {
+//     id: 2,
+//     name:"Login",
+//   },]

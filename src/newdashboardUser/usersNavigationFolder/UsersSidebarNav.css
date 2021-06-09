@@ -45,7 +45,13 @@
 }
 
  @media screen and (max-width: 1024px){
-     .user-sidenav-container1 {
+     .user-nav-link-container {
          position: absolute;
      }
 } 
+
+@media screen and (max-width: 414px) {
+    .user-small-sidebar {
+        display: none;
+    }
+}

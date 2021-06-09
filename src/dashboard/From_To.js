@@ -12,9 +12,11 @@ export const FromTo = () => {
     const defaultTrip = {from: '', to: ''};
     const [movement, setMovement] = useState(defaultTrip)
        const location = e => setMovement({from: e.target.value, to: movement.to})
+
       const destination = (e)=>{
         setMovement({from: movement.from, to: e.target.value})
       }
+      
       const handleClick = (e)=>{
         // e.preventDefault()
         // userNotification.push(from, to)
@@ -25,7 +27,7 @@ export const FromTo = () => {
        
        navigate('/notification')
       }
-// [{from: 'isolo', to: 'lagos'}]
+
       // When DOM loaded
       useEffect(()=>{
         const tripDetails = JSON.parse(localStorage.getItem('details')) || []

@@ -91,3 +91,61 @@
     color: #20b8eb;
     cursor: pointer;
 }
+
+/* Start of next component */
+.register-car_container{
+    background-color: white;
+    border-radius: 7px;
+    display: block;
+    overflow: hidden;
+    box-shadow: 0px 12px 30px 6px rgba(66, 113, 164, 0.104891);
+    width: 437px;
+    margin: 1% auto;
+    max-width: 100%;
+    height: 630px;
+    position: relative;
+}
+
+.vehicle-detals__form{
+    padding: 30px 40px;
+}
+
+.vehicle-details_container_div{
+     position: relative;
+     padding-bottom: 10px;
+}
+
+.vehicle-label{
+     color: #a5a5a5;
+     font-size: 1.1rem;
+}
+
+.vehicle-details_container_div, input, select{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    font-family: inherit;
+    width: 100%;
+    padding: 12px;
+    display: block;
+    font-size: 14px;
+    margin-top: 0.5rem
+}
+
+.register-vehicle_btn{
+     width: 100%;
+     font-family: inherit;
+     font-size: 18px;
+     padding: 10px;
+     border-radius: 17px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+     cursor: pointer;
+     color: white;
+     background-color: #007BFF;
+     list-style: none;
+     outline: none;
+     border: none;
+     transition: color 1000ms;
+     transition: background-color 500ms ease-in-out;
+     margin-top: 2rem;
+}
+/* End of next component */

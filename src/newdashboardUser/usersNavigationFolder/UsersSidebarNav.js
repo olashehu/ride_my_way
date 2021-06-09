@@ -17,10 +17,10 @@ const UsersSidebarNav = (props) => {
             
             <div className="side-side-nav">
                 <div className="user-nav-link-container" style={{display: `${!toggle ? 'none' : ''}`}}>
+                    <Link to="/ride/offer"> Ride Offer </Link>
                     <Link to="/user-dashboard" className="active"> Ride History </Link>
-                    <Link to="/ride_offer"> Ride Offer </Link>
-                    {/* <Link to="/payment">Payment</Link> */}
                     <Link to = '/user-notification'> Notification </Link>
+                    <Link to = '/user/profile'>Setting</Link>
                 </div>
                 <div>
                     <UsersSmallNav switchNav = {toggle}/>

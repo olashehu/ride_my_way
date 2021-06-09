@@ -15,17 +15,16 @@ const DriversSignup = () => {
       </div>
       <form
         action=""
-        className="main-drivers-form"
-        
-      >
-          <div className="pilot-sign">
+        className="main-drivers-form">
+
+        <div className="pilot-sign">
           <label htmlFor="first-name" className="label-text-pilot">
             First Name
           </label>
           <input
             type="text"
             name="first-name"
-            />
+          />
       
         </div>
         <div className="pilot-sign">
@@ -49,13 +48,15 @@ const DriversSignup = () => {
           />
           </div>
           <div className="pilot-sign">
-          <label htmlFor="number" className="label-text-pilot">
+          <label htmlFor="telphone" className="label-text-pilot">
             Phone Number
           </label>
           <input
             type="tel"
             required
             name="telephone"
+            placeholder="123-45-678" 
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           />
         </div>
         <div className="pilot-sign">
@@ -83,9 +84,9 @@ const DriversSignup = () => {
         </div>
        
 
-        <button className="Sign-btn-pilot">Next</button>
+        <Link to = '/next'> <button className="Sign-btn-pilot">Next</button></Link>
         <div className="terms-condition" style={{display:"flex", marginTop:"1.5rem"}}>
-          <input type="checkbox" style={{marginRight:'1rem'}}/>
+          {/* <input type="checkbox" style={{marginRight:'1rem'}}/> */}
           {/* <p>I agree to the Terms and Conditions</p> */}
         </div>
         <div className="have-account">

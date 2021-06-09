@@ -1,6 +1,7 @@
 import React from 'react'
 import './UsersTopNavigation.css'
 import {FaBars} from 'react-icons/fa'
+import ProfilePic from './ProfilePic'
 
 const UsersTopNavigation = (props) => {
    return (
@@ -8,7 +9,7 @@ const UsersTopNavigation = (props) => {
            <h1 className='me'>RMW</h1>
            <FaBars className='me' onClick = {props.togle}/>
            <div className= 'profile-container'>
-               <img src="olashehu.jpg" alt="" className='profile'/>
+              <ProfilePic />
            </div>
    </div>
    )

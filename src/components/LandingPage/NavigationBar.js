@@ -32,10 +32,10 @@ const NavigationBar = () => {
           <div className='links-container' ref={linksContainerRef}>
             <ul className='links' ref={linksRef}>
               {links.map((link) => {
-                const { id, url, text} = link;
+                const { id, url, text,} = link;
                 return (
                   <li key={id}>
-                    <a href={url}>{text}</a>
+                    <Link to={url}>{text}</Link>
                   </li>
                 );
               })}
@@ -53,3 +53,5 @@ const NavigationBar = () => {
   };
   
   export default NavigationBar;
+
+  
