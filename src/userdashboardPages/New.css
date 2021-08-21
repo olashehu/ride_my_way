@@ -1,0 +1,64 @@
+.user__join-ride-contaner {
+    border: 2px solid black;
+    width: 97%;
+    margin: .5% 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.user__join-ride-flex-container{
+    /* border: 3px solid red; */
+    width: 27%;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    box-shadow: 0px 12px 30px 6px rgba(16, 113, 164, 0.104891);
+}
+.image-container{
+    position: relative;
+}
+.driver-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    right: 50%;
+    top: -30px;
+}
+.join-ride-flex-item {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid green; */
+    margin-top: 3%;
+    /* width: 98%; */
+    /* margin-left: 2%; */
+}
+.in{
+    /* border: 1px solid red; */
+    font-weight: 700;
+    font-size: 1rem;
+    width: 25%;
+    text-align: center;
+}
+.im{
+    /* border: 1px solid blue; */
+    font-weight: 600;
+    font-size: 1rem;
+    width: 73%;
+    margin-left: 2%;
+}
+.sixth__ button{
+    margin: 1% auto;
+    display: block;
+    /* background-color: red; */
+    padding: 8px 30px;
+    color: black;
+    font-size: 1rem;
+    border: 1px solid #44ce6f;
+}
+.sixth__ button:hover{
+    background-color: #44ce6f;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

@@ -1,7 +1,7 @@
 import { FaBars } from 'react-icons/fa';
 import {links} from './data';
 import React, { useState, useRef, useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
     const [showLinks, setShowLinks] = useState(false);
@@ -11,15 +11,16 @@ const NavigationBar = () => {
     const toggleLinks = () => {
       setShowLinks(!showLinks);
     };
+
     useEffect(() => {
       const linksHeight = linksRef.current.getBoundingClientRect().height;
-      console.log(linksHeight)
       if (showLinks) {
         linksContainerRef.current.style.height = `${linksHeight}px`;
       } else {
         linksContainerRef.current.style.height = '0px';
       }
     }, [showLinks]);
+
     return (
       <nav>
         <div className='nav-center'>
@@ -35,23 +36,19 @@ const NavigationBar = () => {
                 const { id, url, text,} = link;
                 return (
                   <li key={id}>
-                    <Link to={url}>{text}</Link>
+                    <a href = {url}>{text}</a>
                   </li>
                 );
               })}
             </ul>
           </div>
-            <ul className='social-icons'>
-              <li>
-                  <Link to ="/login">Login</Link>
-                  <Link to ="/signup">Sign Up</Link>
-              </li>
-            </ul>
+          <div className='social-icons'>
+            <Link to ="/login"> <span >Login</span></Link>
+            <Link to ="/signup"><span >Sign Up</span></Link>
           </div>
+        </div>
       </nav>
     );
   };
   
   export default NavigationBar;
-
-  

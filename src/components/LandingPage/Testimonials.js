@@ -1,7 +1,7 @@
-import React from 'react'
-import img1 from "../../assest/rasheed.jpg"
-import img2 from "../../assest/Shukurah.jpg"
-import img3 from "../../assest/paul.jpg"
+// import img1 from "../../assest/rasheed.jpg"
+// import img2 from "../../assest/Shukurah.jpg"
+// import img3 from "../../assest/paul.jpg"
+
 const Testimonials = () => {
     return (
         <div>
@@ -15,7 +15,7 @@ const Testimonials = () => {
             {/* <span style={{color:"#0090FF", fontWeight:"bold", marginBottom:"1.5rem"}}>01.</span> */}
             <p>RMW is cool ride application. I love the user interface made with several functionalities. Great app!</p>
             <div className="img-section-name">
-            <img src={img1} alt="" className="card-guide avartar" width="60px" />
+            <img src='./olashehu.jpg' alt="" className="card-guide avartar" width="60px" />
             <div style = {{marginLeft: 10}}>
                 <p style={{marginBottom:"4px"}}>Rasheed</p>
                 <span>Frontend React Developer</span>
@@ -26,7 +26,7 @@ const Testimonials = () => {
             {/* <span style={{color:"#0090FF", fontWeight:"bold", marginBottom:"1.5rem"}}>01.</span> */}
             <p>No doubt!. The web application of RMW is a great solution to myself and a lot of people out there.</p>
             <div className="img-section-name">
-            <img src={img2} alt="" className="card-guide avartar" width="60px" />
+            <img src='./olashehu.jpg' alt="" className="card-guide avartar" width="60px" />
             <div style = {{marginLeft: 10}}>
                 <p style={{marginBottom:"4px"}}>Shukurah</p>
                 <span>Full Stack Developer</span>
@@ -37,7 +37,7 @@ const Testimonials = () => {
             {/* <span style={{color:"#0090FF", fontWeight:"bold", marginBottom:"1.5rem"}}>01.</span> */}
             <p>The exprience I had using this application is great.Responsiveness, web-accessibility, scalablity is top-notch. Kudos to the creator</p>
             <div className="img-section-name">
-            <img src={img3} alt="" className="card-guide avartar" width="60px" />
+            <img src='./olashehu.jpg' alt="" className="card-guide avartar" width="60px" />
             <div style = {{marginLeft: 10}}>
                 <p style={{marginBottom:"4px"}}>Paul</p>
                 <span>MERN Stack Developer</span>

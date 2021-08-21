@@ -28,14 +28,18 @@
 }
 
 .order__now {
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    border-color: #44ce6f;
     padding: 12px 20px;
     text-align: center;
     text-transform: uppercase;
-    border: none;
     border-radius: 5px;
     font-family: 'IBM Plex Sans',
     sans-serif;
+}
+.order__now:hover{
+    background-color: #44ce6f;
+    border: none;
 }
 
 @media screen and (min-width: 768px) {

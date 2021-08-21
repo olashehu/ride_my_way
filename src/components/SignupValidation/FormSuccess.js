@@ -1,13 +1,12 @@
-// import React from 'react';
-// import './Form.css';
+//  import React from 'react';
 
-const FormSuccess = () => {
-  return (
-    <div className='form-content-right'>
-      <h1 className='form-success'>Your request has been receive!</h1>
+// const FormSuccess = () => {
+//   return (
+//     <div className='form-content-right'>
+//       <h1 className='form-success'>Your request has been receive!</h1>
       
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
-export default FormSuccess;
+// export default FormSuccess;

@@ -1,21 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
 import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav'
-import {AiFillCaretDown} from "react-icons/ai";
+import "./UserSetting.css";
+import { useDispatch, useSelector} from 'react-redux';
+import { setCurrentUser } from '../reducers/authslice'
+import axios from 'axios'
 
 const UserSetting = () => {
+
+    const dispatch = useDispatch();
+    const profile = useSelector((state) => state.auth);
+    const [updateUser, setUpdateUser] = useState({
+        firstName: profile.firstName,
+        lastName: profile.lastName,
+        email: profile.email
+    });
+
+    function handleChange(e){
+        //setUpdateUser({...updateUser, [e.target.name]: e.target.value})
+        setUpdateUser({...prev => prev, [e.target.name]: e.target.value})
+    }
+
+    async function updateProfile(e){
+      e.preventdefault();
+      try {
+      const res = await axios({
+       method: 'put',
+       baseURL: 'http://localhost:3000/v1/user/profile-page',
+       data: updateUser,
+    });
+     console.log(res.data)
+     dispatch(setCurrentUser(res.data))
+      } catch (error) {
+          console.log(error, 'error in usersetting update');
+      }
+  }
     return (
         <UsersSidebarNav>
-            <h1 className = 'user_info__header'>Personal info</h1>
-            <div className = 'user-info__container'>
-                <div>Name  <span className = 'user__infos'>Michael Love</span><AiFillCaretDown className = 'user_profile_icon'/></div>
-                <div>Email  <span className = 'user__infos'>michael123.love@gmail.com</span></div>
-                <div className = 'bottom'>Phone  <span className = 'user__infos '>09034523567</span></div>
-                <button>Save</button>
+            <div className = 'user__profile__container'>
+                <div className="user__profile__header">
+                    <h1>My Profile</h1>
+                    <p>Add information about yourself</p>
+                </div>
+                <div className="user__profile__body">
+                    <div className="profile__form">
+                        <input type="text" name="firstName" value={updateUser.firstName} onChange={handleChange}/>
+                    </div>
+                    <div className="profile__form">
+                        <input type="text" name="lastName"  value={updateUser.lastName} onChange={handleChange}/>
+                    </div>
+                    <div className="profile__form">
+                        <input type="email" name="email"  defaultValue={updateUser.email} disabled/>
+                    </div>
+                </div>
+                <div className='center'><button className="user__profile__edit"  onSubmit={updateProfile}>Save</button></div>   
             </div>
         </UsersSidebarNav>
     )
 }
 
-export default UserSetting
+// const mapStateToProps =(state) =>{
+//     console.log(state);
+// return {
+//   auth: state.auth
+// }
+// }
+// export default connect(mapStateToProps)(UserSetting);
 
-
+export default UserSetting;

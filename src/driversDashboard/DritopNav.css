@@ -1,5 +1,5 @@
 .dri-top-nav{
-    background-color: black;
+    background-color: #44ce6f;
     width: 99vw;
     height: 60px;
 }
@@ -8,13 +8,48 @@
     width: 100%;
     display: flex;
     align-items: center;
-    color: white;
+    position: relative;
+    /* top: 10px; */
 }
 
-button.btn-btn{
+/* button.btn-btn{
     margin-left: 10px;
+} */
+
+.dd {
+    margin-left: 1%;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.driver-toggle {
+    font-size: 21px;
+    border-radius: 5px;
+    margin-top: 2.5%;
+    margin-left: 5%;
+    /* position: absolute;
+    left: 8%; */
 }
 
-/* .navbar-sidebar{
-     z-index: 999; 
-} */
+.driver-top-navigation1{
+    display: flex;
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 2%;
+}
+.driver-top-navigatio2{
+    width: 20%;
+    margin-left: 50%;
+    display: flex;
+    margin-top: 10px;
+}
+.driver-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 77%;
+}
+.driver-top-navigatio2 span{
+    margin-top: 2%;
+    font-size: 1.3rem;
+    color: black;
+}

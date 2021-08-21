@@ -1,10 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useState} from "react";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link, useHistory } from "react-router-dom";
 import NavigationBar from "../LandingPage/NavigationBar";
-
-
-export const Login = () => {
-
+import {  useDispatch, connect } from 'react-redux';
+import { userLoggedIn, signupError } from '../../reducers/authslice';
+import axios from 'axios';
+import jwtDecode from "jwt-decode";
+ 
+ toast.configure();
+ const Login = (props) => {
+  const history = useHistory()
+  const [isLoggedIn, setIsLogged] = useState({
+    email: '',
+    password: ''
+  })
+  const dispatch =useDispatch()
+   function handleChange(e){
+    setIsLogged(
+      {...isLoggedIn, [e.target.name]: e.target.value})
+  }
+   async function handleSubmit(e){
+    e.preventDefault();
+    try {
+    const {data} = await  axios({
+      method: 'post',
+      baseURL: 'http://localhost:3000/v1/user/login',
+      data: isLoggedIn,
+    });
+     const token = data.token;
+     localStorage.setItem("token",JSON.stringify(token))
+     const validToken = localStorage.getItem("token");
+     const decoded = jwtDecode(validToken);
+     localStorage.setItem("user", JSON.stringify(decoded.data))
+     dispatch(userLoggedIn(decoded.data))
+     history.push('/ride/offer')
+     const notify = () => toast(data.message);
+      notify();
+    } catch (error) {
+      dispatch(signupError({userError: error.response.data.message}))
+    }
+    
+  }
   return (
     <div>
       <NavigationBar></NavigationBar>
@@ -15,8 +52,9 @@ export const Login = () => {
       <form
         action=""
         className="main-form"
-
+      onSubmit={handleSubmit}
       >
+        <div><span style={{color:'red'}}>{props.auth.userError}</span></div>
         <div className="form">
           <label htmlFor="email" className="label-text">
             Email
@@ -26,7 +64,8 @@ export const Login = () => {
             placeholder="mail@mail.com"
             required
             name="email"
-          
+            value={isLoggedIn.email}
+            onChange = {handleChange}
           />
      
         </div>
@@ -37,13 +76,14 @@ export const Login = () => {
           <input
             type="password"
             placeholder="Enter your password"        
-            name="password1"
+            name="password"
            required
+           value={isLoggedIn.password}
+           onChange = {handleChange}
           />
           
         </div>
-
-        <Link to = '/ride/offer'><button className="login-btn">Login</button></Link>
+        <button className="login-btn">Login</button>
         <div className="forget-password-container">
           <a href="/forgetPassword">Forget password ?</a>
         </div>
@@ -61,4 +101,9 @@ export const Login = () => {
     </div>
   );
 };
-export default Login;
+ const mapStateToProps =(state) =>{
+return {
+  auth: state.auth
+}
+}
+export default connect(mapStateToProps)(Login);

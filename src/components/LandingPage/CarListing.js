@@ -1,5 +1,3 @@
-import React from 'react'
-
 const cars =[{
     id: 1,
     image:
@@ -45,7 +43,7 @@ const cars =[{
 ]
 const CarListing = () => {
     return (
-        <div>
+        <div id="listing">
             <div style={{marginTop:"4rem"}}>
             <div className="how-it-works-header">
             <h1 className="card-guide">We Hire Best Drivers In The World</h1>

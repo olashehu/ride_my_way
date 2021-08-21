@@ -1,5 +1,3 @@
-import React from 'react'
-//import BannerImg from "../../assest/jonas-zurcher-yhxanIx21aQ-unsplash.jpg"
 const HowItWorks = () => {
     return (
         <div>

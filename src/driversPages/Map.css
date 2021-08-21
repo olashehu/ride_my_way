@@ -1,4 +1,4 @@
-
+/* 
  .driver-map{
     display: flex;
     flex-direction: column;
@@ -9,12 +9,7 @@
 .img_img{
     width: 170px;
 }
-/*
-.d-name{
- margin-left: 20px;
- margin-bottom: 5px;
-}
-*/
+
 .person_driver{
     display: flex;
     align-items: center;
@@ -48,4 +43,4 @@
 } 
 .ty > button{
     margin: 10px;
-}
+} */

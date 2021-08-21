@@ -1,59 +1,93 @@
-import React, { useState } from 'react'
-import Map from '../driversPages/Map'
-//import DritopNav from './DritopNav'
-import './DriversDashboardHome.css'
-import DriversNavbar from './DriversNavbar'
-//import Smallsidebar from './Smallsidebar'
+import axios from 'axios';
+import React, {useState } from 'react';
+import { useHistory } from "react-router-dom";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import './DriversDashboardHome.css';
+import DriversNavbar from './DriversNavbar';
+import { addOffer, errorInOffer } from '../reducers/offerSlice';
 
-
+toast.configure();
 const DriversDashboardHome = () => {
-    const [togle, setTogle] = useState(150)
-    const [reject, setReject] = useState(0)
-    
-    const togleFunc = ()=>{
-        setTogle(togle + 1)
+    const history = useHistory();
+    const dispatch = useDispatch();
+    const [offer, setOffer ] = useState({
+        location: '',
+        destination: '',
+        price: '',
+    })
+
+    const handleChange = (e) => {
+        setOffer({...offer, [e.target.name]: e.target.value})
     }
 
-    const decline = () => {
-        setReject(prev => prev + 1)
+    const handleOffer = async (e) => {
+        e.preventDefault()
+        const token = JSON.parse(localStorage.getItem('driver-token'));
+        try {
+            const res = await axios({
+                method: 'post',
+                baseURL: "http://localhost:3000/v1/driver/ride-offer",
+                data: offer,
+                headers:{
+                    Authorization: `Bearer ${token}`
+                }   
+            })
+            dispatch(addOffer(res.data))
+            history.push('/my-offer')
+            const notify = () => toast(res.data.message);
+            notify();
+        } catch (error) {
+            const notify = () => toast(error.response.data.message);
+            notify();
+        }
     }
     return (
-        <DriversNavbar>    
-            <div className='content'>
-             {/* {toggle ? <DriversNavbar toggleMe={toggle}/> : <Smallsidebar toggle={toggle}/>} */}
-                 <div>
-                     <div >
-               <h1>Welcome to Drivers dashboard</h1>
-               <div className = "dcontainer">
-                   <div className="flex-child">
-                      <p  style={{color:'white'}}>{togle}</p>
-                      <h4 style={{textAlign: 'center'}}>Accepted Reqeust</h4>
-                   </div>
-                   <div className="flex-child">
-                      <p  style={{color:'white'}}>{reject}</p>
-                      <h4 style={{textAlign: 'center'}}>Reject Request</h4>
-                   </div>
-                   <div className="flex-child">
-                       <p style={{color:'white'}}>50</p>
-                       <h4 style={{textAlign: 'center'}}>Likes</h4>
-                   </div>
-                   <div className="flex-child">
-                        <p  style={{color:'white'}}>50</p>
-                       <h4 style={{textAlign: 'center'}}>Rate</h4>
-                   </div>
-               </div>
-
-
-               <div>
-                   <Map click={togleFunc} change={decline}/>
-               </div>
-               
-            </div> 
-
-                 </div>
+        <DriversNavbar>
+            <div className="add-offer-container">
+                <div className="add_offer_container_content">
+                    <h1 className='add_offer_header'>Add your offer below</h1>
+                    <div className="add_offer_inputs">
+                        <div className="offer_field">
+                            <input
+                             type="text"
+                             name="location"
+                             placeholder=' Your location here...'
+                             onChange={handleChange}
+                             value={offer.location}
+                            />
+                        </div>
+                        <div className="offer_field">
+                            <input
+                              type="text"
+                              name='destination'
+                              placeholder='Your destination here...'
+                              value={offer.destination}
+                              onChange={handleChange}
+                            />
+                        </div>
+                        <div className="offer_field">
+                            <input
+                              type="text"
+                              name='price'
+                              placeholder='Your amount here...'
+                              value={offer.price}
+                              onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                    <button className='add_offer' onClick={handleOffer}>Add offer</button>
+                </div>
             </div>
         </DriversNavbar>
     )
 }
 
+// // const mapStateToProps =(state) =>{
+// //   return {
+// //     offer: state.offer
+// //   }
+// // }
+// export default connect(mapStateToProps)(DriversDashboardHome);
 export default DriversDashboardHome

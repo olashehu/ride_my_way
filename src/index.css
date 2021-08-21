@@ -1,9 +1,6 @@
-/*
-=============== 
+/* 
 Variables
-===============
 */
-
 :root {
     /* dark shades of primary color*/
     --clr-primary-1: hsl(205, 86%, 17%);
@@ -44,37 +41,39 @@ Variables
     --max-width: 1170px;
     --fixed-width: 620px;
   }
-  /*
-  =============== 
+  /* 
   Global Styles
-  ===============
   */
   
-  *{
+  * {
     margin: 0;
     padding: 0;
-        box-sizing: inherit;
+    box-sizing: inherit;
   }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
     box-sizing: border-box;
   }
+
   ul {
     list-style-type: none;
   }
+
   a {
     text-decoration: none;
   }
+
   p {
     margin-bottom: 1.25rem;
     color: var(--clr-grey-5);
   }
   
-  .banner-img{
+  .banner-img {
     background: url(./assest/hero_1_a.jpg);
     height: 90vh;
     background-repeat: no-repeat;
@@ -83,13 +82,11 @@ Variables
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   }
   
-  /*
-  =============== 
-  Navbar
-  ===============
+  /* 
+  Start of Navbar styling
   */
   /* logo styling (RMW) */
-  .logo-text{
+  .logo-text {
     font-size: 40px;
     font-family: 'Open Sans', sans-serif;
     color: rgb(0,0,0);
@@ -123,7 +120,7 @@ Variables
     color: var(--clr-primary-1);
     transform: rotate(90deg);
   }
-  
+
   .logo {
     height: 40px;
   }
@@ -176,7 +173,7 @@ Variables
     font-size: 2rem;
     margin-bottom: 50px;
   }
-   .btn:link,
+  .btn:link,
   .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -360,9 +357,8 @@ Variables
     width: 437px;
     margin:.5% auto;
     max-width: 100%;
-    height: 1140px;
+    height: 770px;
     position: relative;
-    border: 1px solid red;
   
   }
   .form-sign{
@@ -608,13 +604,13 @@ Variables
   }
   
   /* TESTIMONIAL STYLING SECITON*/
-
 .avartar{
   vertical-align: middle;
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
+
 .img-section-name{
   display: flex;
 }
@@ -631,7 +627,6 @@ Variables
     }
   }
 
- 
   @media screen and (min-width: 800px) {
     .nav-center {
       margin: 0 auto;
@@ -640,30 +635,36 @@ Variables
       justify-content: space-between;
       padding: 1rem;
     }
+
     .nav-header {
       padding: 0;
     }
+
     .nav-toggle {
       display: none;
     }
+
     .links-container {
       height: auto !important;
     }
+
     .links {
       display: flex;
     }
+
     .links a {
       padding: 0;
       margin: 0 0.5rem;
     }
+
     .links a:hover {
       padding: 0;
       background: transparent;
     }
+
     .social-icons {
       display: flex;
-      font-size: 20px;
-      
+      font-size: 20px;  
     }
    
     .social-icons a {
@@ -671,14 +672,12 @@ Variables
       color: #007BFF;
       transition: var(--transition);
     }
+
     .social-icons a:hover {
       color: var(--clr-primary-7);
     }
   }
 
- 
-  
-   
    @media screen and (max-width: 790px) {
      .social-icons {
        display:block;

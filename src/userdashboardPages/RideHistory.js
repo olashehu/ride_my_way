@@ -1,46 +1,19 @@
-import React from 'react'
-import './RideHistory.css'
-import {AiFillCar} from 'react-icons/ai'
-import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav'
+import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav';
+import { Table } from '../tablecomponent/Table';
 
-const user = [
-    {
-        from: 'Lamina Lawal Isolo Lagos',
-        to: 'Victorial Island Lagos',
-        date: '09/04/2001',
-        time: '20:10',
-        car_name: 'Toyota Camry'
-    },
-    {
-        from: 'Lamina Lawal Isolo Lagos',
-        to: 'Victorial Island Lagos',
-        date: '09/04/2001',
-        time: '20:10',
-        car_name: 'Toyota Camry'
-    }
-]
-
-const History = ({date, time, pic, car_name, from, to}) => {
-    return(
-        <div className = 'par'>
-            <div>{from}</div>
-            <div>{to}</div>
-            <div>{date} at {time}</div>
-            <div>{car_name}</div>
-            <div><AiFillCar/></div>
-        </div>
-    )
-}
 
 const RideHistory = () => {
     return (
         <UsersSidebarNav>
-            <h1 style = {{textAlign: 'center'}}>My History</h1>
-            <div className="testing">
-                {user.map((users, index) => {
-                    return <History {...users} key = {index} />
-                })}
-            </div>
+            <h1 style={{textAlign:'center', fontSize: '1.8rem'}}>User History</h1>
+            <Table 
+              Date = '05-04-2021'
+              Time='09:30am'
+              Location='Ilorin'
+              Destination='Ibadan'
+              Price='2000'
+              Status='completed'
+            />
         </UsersSidebarNav>
     )
 }
