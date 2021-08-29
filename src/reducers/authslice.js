@@ -18,6 +18,11 @@ export const authSlice = createSlice({
             state.lastName = action.payload.lastName
             state.email = action.payload.email
         },
+        // updateCurrentUser:(state, action) => {
+        //     state.id = action.payload
+        //     state.firstName = action.payload
+        //     state.lastName = action.payload
+        // },
         
         userLogout:(state) => {
             state.isAuthenticated = false
@@ -39,5 +44,5 @@ export const authSlice = createSlice({
     }
 });
 
-export const { setCurrentUser,userLogout, userLoggedIn, signupError } = authSlice.actions
+export const { setCurrentUser,userLogout, userLoggedIn, signupError, updateCurrentUser } = authSlice.actions
 export default authSlice.reducer

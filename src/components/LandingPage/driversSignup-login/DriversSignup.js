@@ -12,6 +12,7 @@ import { setCurrentDriver, driverSignupError } from '../../../reducers/driverSli
 
 toast.configure();
 const DriversSignup = (props) => {
+  
   const history = useHistory();
   const dispatch = useDispatch();
   const [driverSignup, setDriverSignup] = useState({

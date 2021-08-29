@@ -26,8 +26,7 @@ const UsersSidebarNav = (props) => {
                     <Link to="/ride/offer"> <div>Available ride</div> </Link>
                     <Link to="/user-dashboard" className="active"><div> Ride History</div></Link>
                     <Link to = '/user-notification'><div> Notification</div></Link>
-                    <Link to = '/user/profile'><div>Setting</div></Link>
-                    <Link to = '/new'><div>New</div></Link>
+                    <Link to = '/user/profile'><div>Profile</div></Link>
                     <Link onClick={onLogOut}><div>Logout</div></Link>
                 </div>
                 <div>

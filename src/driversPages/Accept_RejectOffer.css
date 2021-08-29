@@ -1,0 +1,52 @@
+.accept-reject-container {
+    /* border: 1px solid black; */
+    width: 30%;
+    background-color: black;
+    box-shadow: 0px 12px 30px 6px rgba(16, 113, 164, 0.104891);
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 1% 1.5%;
+}
+
+.accept-reject-flex-container {
+    /* border: 1px solid red; */
+    display: flex;
+    width: 98%;
+    padding: 1.5% 0;
+    margin-left: 2%;
+}
+
+.accept-reject-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.accept-reject-flex-container h4.passenger-name{
+    /* border: 1px solid #fff; */
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+}
+
+.passenger-to-driver {
+    margin-left: 2%;
+}
+
+.accept-reject-flex-container button {
+    padding: 10px 36px;
+    font-size: 1.01em;
+    color: #fff;
+    margin: 1% 5%;
+}
+button.accept-offer{
+    background-color: green;
+}
+
+button.reject-offer {
+    background-color: red;
+}
+
+.accept-reject-flex-container button:hover{
+    cursor: pointer;
+}

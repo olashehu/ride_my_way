@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useHistory } from 'react-router-dom';
-import {  useDispatch, connect } from 'react-redux';
+import { useDispatch, connect } from 'react-redux';
 import NavigationBar from '../NavigationBar';
 import { driverLoggedIn, driverSignupError } from '../../../reducers/driverSlice';
 import axios from 'axios';
@@ -40,13 +40,13 @@ const DriversLogin = () => {
       const notify = () => toast(data.message);
       notify();
     } catch (error) {
-      dispatch(driverSignupError({driverError: error.response.data.message}))
-    }
+      dispatch(driverSignupError({driverError: error.response.data.message}));
+    };
      
-  }
+  };
   return(
-        <div>
-          <NavigationBar></NavigationBar>
+      <div>
+        <NavigationBar></NavigationBar>
           <div className="container-login">
              <div className="header">
                <h3>Login as a driver here</h3>

@@ -1,6 +1,6 @@
 .user__profile__container {
     border: 1px solid black;
-    width: 80%;
+    width: 70%;
     margin: 5% auto;
 }
 div.user__profile__header {
@@ -15,10 +15,12 @@ div.user__profile__header {
 }
 .profile__form {
     padding: 20px;
+    margin: 0 auto;
 }
 
 .profile__form input {
-    width: 80%;
+    padding: 10px 5px;
+    width: 70%;
     margin: 0 auto;
 }
 

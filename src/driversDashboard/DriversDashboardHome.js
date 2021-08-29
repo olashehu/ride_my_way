@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
 import './DriversDashboardHome.css';
 import DriversNavbar from './DriversNavbar';
-import { addOffer, errorInOffer } from '../reducers/offerSlice';
+import { addOffer, setAddOffer } from '../reducers/offerSlice';
 
 toast.configure();
 const DriversDashboardHome = () => {
@@ -26,7 +26,7 @@ const DriversDashboardHome = () => {
         e.preventDefault()
         const token = JSON.parse(localStorage.getItem('driver-token'));
         try {
-            const res = await axios({
+            const {data} = await axios({
                 method: 'post',
                 baseURL: "http://localhost:3000/v1/driver/ride-offer",
                 data: offer,
@@ -34,9 +34,10 @@ const DriversDashboardHome = () => {
                     Authorization: `Bearer ${token}`
                 }   
             })
-            dispatch(addOffer(res.data))
+            console.log(data.data);
+            dispatch(setAddOffer({offer}))
             history.push('/my-offer')
-            const notify = () => toast(res.data.message);
+            const notify = () => toast(data.message);
             notify();
         } catch (error) {
             const notify = () => toast(error.response.data.message);
