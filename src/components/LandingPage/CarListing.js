@@ -44,11 +44,11 @@ const cars =[{
 const CarListing = () => {
     return (
         <div id="listing">
-            <div style={{marginTop:"4rem"}}>
-            <div className="how-it-works-header">
-            <h1 className="card-guide">We Hire Best Drivers In The World</h1>
+            <div className='show-driver-container'>
+            <div className="show-driver-section">
+            <h1 className="show-driver-header">We Hire Best Drivers In The World</h1>
             <div className="underline"></div>
-            <p className="card-guide">Your Safety Is Our Periority.</p>
+            <p className="card-guide show-driver-para">Your Safety Is Our Periority.</p>
             </div>
             </div>
         <div className="flex-car">
@@ -70,19 +70,10 @@ export const Cars =(props) =>{
         <article className="single-tour">
         <img src={props.image} alt="car"/>
         <footer>
-          {/* <div className="tour-info">
-            <h3 className="car-names">{props.name}</h3>
-            <h4 className="tour-price">{props.price}/day</h4>
-          </div> */}
           <hr></hr>
-          <p>
+          <p className='show-driver-content'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos at eum, voluptatem quibusdam.
           </p>
-            {/* <button style={{width:"8rem", background:"rgb(0,123,255)", height:"4rem", borderRadius:"1rem",color:"white", outline:"none"}} >
-             
-            </button> */}
-    
-    
         </footer>
       </article>
     )

@@ -3,8 +3,8 @@ import { useSelector, useDispatch, connect } from "react-redux";
 import { displayOffer } from "../reducers/offerSlice";
 import axios from "axios";
 import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav';
-import New from './New';
-import "./New.css";
+import UserRide from './UserRide';
+import "./UserRide.css";
 
 
 const RideOffer = () => {
@@ -36,12 +36,15 @@ const RideOffer = () => {
         <div className="user__join-ride-contaner">
           {userOffer.map((user_card, index) => {
             return (
-              <New
-                id={user_card.id}
+              <UserRide
+                id={user_card.offerId}
+                onUserCardFirstname={user_card.firstName}
+                onUserCardLastName={user_card.lastName}
                 onUserCardName={user_card.name}
                 onUserCardLocation={user_card.location}
                 onUserCardDestination={user_card.destination}
                 onUserCardPrice={user_card.price}
+                onUserCardPhone={user_card.phone}
               />
             );
           })}

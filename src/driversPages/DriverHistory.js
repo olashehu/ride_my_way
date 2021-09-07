@@ -15,7 +15,7 @@ const DriverHistory = () => {
        try {
       const token = JSON.parse(localStorage.getItem("driver-token"));
       const { data } = await axios({
-        baseURL: "http://localhost:3000/v1/user/ride-history",
+        baseURL: "http://localhost:3000/v1/driver/ride-history",
         method: "get",
         headers: {
           Authorization: `Bearer ${token}`,

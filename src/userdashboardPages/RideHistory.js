@@ -29,7 +29,7 @@ const RideHistory = () => {
     useEffect(() => {
         getHistoryData();
     }, []);
-
+    console.log(userHistory);
     return (
         <UsersSidebarNav>
           <div className="table-container">

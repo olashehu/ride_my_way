@@ -84,11 +84,4 @@ const DriversDashboardHome = () => {
         </DriversNavbar>
     )
 }
-
-// // const mapStateToProps =(state) =>{
-// //   return {
-// //     offer: state.offer
-// //   }
-// // }
-// export default connect(mapStateToProps)(DriversDashboardHome);
 export default DriversDashboardHome

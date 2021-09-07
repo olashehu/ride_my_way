@@ -47,9 +47,17 @@
     height: 40px;
     border-radius: 50%;
     margin-left: 77%;
+    object-fit: cover;
 }
 .driver-top-navigatio2 span{
     margin-top: 2%;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
     color: black;
+}
+
+@media screen and (max-width: 414px) {
+    .driver-top-navigatio2 {
+        margin-left: 40%;
+    }
 }

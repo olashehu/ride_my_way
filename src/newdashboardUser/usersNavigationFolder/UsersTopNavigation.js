@@ -9,7 +9,7 @@ const UsersTopNavigation = (props) => {
    return (
        <div className = 'nav-user-top'>
            <h1 className='me'>RMW</h1>
-           <FaBars className='me' onClick = {props.togle}/>
+           <FaBars className='me toggle-user' onClick = {props.togle}/>
            <div className= 'profile-container'>
               <ProfilePic />
               <span style = {{color: 'black', fontSize: '20px'}}>{firstName}</span>

@@ -1,11 +1,13 @@
-//import DriversNavbar from '../driversDashboard/DriversNavbar';
 import axios from "axios";
+import { useState } from "react";
 
+const UserRide = ({id, onUserCardFirstname, onUserCardLastName, onUserCardLocation, onUserCardDestination, onUserCardPrice, onUserCardPhone}) => {
 
-const New = ({id, onUserCardName, onUserCardLocation, onUserCardDestination, onUserCardPrice, onUserCardPhone}) => {
+  const [disableJoinOfferButton, setDisableJoinOfferButton] = useState(false)
 
   const joinOffer = async (id) => {
-    console.log(`join ride ${id}`);
+
+    setDisableJoinOfferButton(true);
     const token = JSON.parse(localStorage.getItem("token"));
     try {
       const res = await  axios({
@@ -15,17 +17,17 @@ const New = ({id, onUserCardName, onUserCardLocation, onUserCardDestination, onU
           Authorization: `Bearer ${token}`,
         },
       });
-      
     } catch (error) {
       console.log(error.response);
     }
-  }
+  };
+  
     return (
       <>
         <>
           <div className="user__join-ride-flex-container">
             <div className="first__ join-ride-flex-item">
-               <img src="./avatar.png" alt="" className="driver-image" />:<span className="im">John Smith</span>
+               <img src="/avatar.png" alt="" className="driver-image" />:<span className="im">{onUserCardFirstname} {onUserCardLastName}</span>
             </div>
             <div className="second__ join-ride-flex-item">
               <span className="in">Location</span>:<span className="im">{onUserCardLocation}</span>
@@ -37,10 +39,10 @@ const New = ({id, onUserCardName, onUserCardLocation, onUserCardDestination, onU
               <span className="in">Price</span>:<span className="im">{onUserCardPrice}</span>
             </div>
             <div className="fifth__ join-ride-flex-item">
-              <span className="in">Contact</span>:<span className="im">08012345678</span>
+              <span className="in">Contact</span>:<span className="im">{onUserCardPhone}</span>
             </div>
             <div className="sixth__ jon-ride-flex-item">
-              <button type="submit" onClick={() => joinOffer(id)}>Join ride</button>
+              <button disabled={disableJoinOfferButton} type="submit" onClick={() => joinOffer(id)}>Join ride</button>
             </div>
           </div>
         </>
@@ -48,4 +50,4 @@ const New = ({id, onUserCardName, onUserCardLocation, onUserCardDestination, onU
     );
 }
 
-export default New; 
+export default UserRide; 

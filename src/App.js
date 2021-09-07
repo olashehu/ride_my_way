@@ -43,7 +43,7 @@ const App = () => {
         <PrivateRoute component = {DriverHistory} path = '/driver/history' />
         <PrivateRoute component = {DisplayOffer} path='/my-offer' />
         <PrivateRoute component = {DriverSetting} path = '/driver/setting' />
-        <Route component = {RideRequest} path='/ride-request' />
+        <PrivateRoute component = {RideRequest} path='/ride-request' />
         <Route component={EditOffer} path='/edit-offer' /> 
        </Switch>
       </Router>

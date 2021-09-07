@@ -8,7 +8,7 @@ const DritopNav = (props) => {
 
     const { firstName } = useSelector(state => state.driverAuth);
     return (
-        <div className = "">
+        <div>
             <header className = "dri-top-nav">
                <div className="top-navigation">
                    <div className="driver-top-navigation1">

@@ -4,7 +4,7 @@ import Banner1 from "./Banner1"
 import Footer from './Footer'
 import HowItWorks from "./HowItWorks"
 import CarListing from './CarListing'
-import Testimonials from './Testimonials'
+import Testimonials from './Testimonials.jsx'
 
   const LandingPage = () => {
      return (

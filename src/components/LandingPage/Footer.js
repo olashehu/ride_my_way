@@ -20,21 +20,21 @@ function Footer() {
 
                         <div className="container1">
                             <div className="account-container">
-                                <h3 style={{color:"white"}}>Your Account</h3>
-                                <p style={{color:"white"}}>Sign up</p>
-                                <p style={{color:"white"}}>Log in</p>
+                                <h3>Your Account</h3>
+                                <p>Sign up</p>
+                                <p>Log in</p>
                             </div>
                             <div className="account-container">
-                                <h3 style={{color:"white"}}>Organise</h3>
-                                <p style={{color:"white"}}>Overview</p>
-                                <p style={{color:"white"}}>Pricing</p>
-                                <p style={{color:"white"}}>Blog</p>
+                                <h3>Organise</h3>
+                                <p>Overview</p>
+                                <p>Pricing</p>
+                                <p>Blog</p>
                             </div>
-                            <div>
-                                <h3 style={{color:"white"}}>Services</h3>
-                                <p style={{color:"white"}}>How it works</p>
-                                <p style={{color:"white"}}>What does it cost to create an account?</p>
-                                <p style={{color:"white"}}>How to contact us</p>
+                            <div className='account-container'>
+                                <h3>Services</h3>
+                                <p>How it works</p>
+                                <p>What does it cost to create an account?</p>
+                                <p>How to contact us</p>
                             </div>
                         </div>
                         <div>

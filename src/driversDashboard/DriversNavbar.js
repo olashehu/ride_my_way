@@ -9,15 +9,17 @@ import Smallsidebar from './Smallsidebar';
 const DriversNavbar = (props) => {
 
  const history = useHistory();
+
  const [toggle, setToggle] = useState(false)
  const toggleFunc = ()=>{
    setToggle(!toggle)
- }
+ };
+
  const logout = () => {
     localStorage.removeItem('driver-token');
     localStorage.removeItem('driver-info');
     history.push('/driver/login');
- }
+ };
     return (
       <div>
         <div>

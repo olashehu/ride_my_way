@@ -21,11 +21,15 @@
     margin: 5px auto;
     border-radius: .5rem;
     padding: 1% 0%;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
 }
 .add_offer{
     border-color: #44ce6f;
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: inherit;
     padding: 10px 60px;
     margin-top: 2%;
 }

@@ -2,6 +2,7 @@
     background-color: #000;
     width: 200px;
     height: 100vh;
+    z-index: 1;
 }
 
 .nav-link-container a {

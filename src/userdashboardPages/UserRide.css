@@ -14,8 +14,8 @@
 }
 
 .driver-image{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 60px;
     border-radius: 50%;
     
 }
@@ -49,4 +49,10 @@
     color: black;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.sixth__button:disabled {
+    background: #999;
+    color: #555;
+    cursor: not-allowed;
 }
