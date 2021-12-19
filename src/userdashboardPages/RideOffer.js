@@ -45,6 +45,7 @@ const RideOffer = () => {
                 onUserCardDestination={user_card.destination}
                 onUserCardPrice={user_card.price}
                 onUserCardPhone={user_card.phone}
+                email={user_card.email}
               />
             );
           })}

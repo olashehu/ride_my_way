@@ -1,63 +1,50 @@
-.dri-top-nav{
+.d_top-nav {
     background-color: #44ce6f;
-    width: 99vw;
-    height: 60px;
-}
-
-.top-navigation {
-    width: 100%;
+    height: 70px;
+    width: 100vw;
     display: flex;
     align-items: center;
-    position: relative;
-    /* top: 10px; */
+    justify-content: space-between;
+    position: fixed;
 }
 
-/* button.btn-btn{
-    margin-left: 10px;
-} */
-
-.dd {
-    margin-left: 1%;
-    font-weight: 700;
-    font-size: 1.6rem;
-}
-.driver-toggle {
-    font-size: 21px;
-    border-radius: 5px;
-    margin-top: 2.5%;
-    margin-left: 5%;
-    /* position: absolute;
-    left: 8%; */
-}
-
-.driver-top-navigation1{
+.d_top-nav-left {
+    width: 20rem;
     display: flex;
-    width: 20%;
-    margin-top: 10px;
-    margin-left: 2%;
+    align-items: center;
 }
-.driver-top-navigatio2{
-    width: 20%;
-    margin-left: 50%;
+
+.d_top-nav-left h1{
+    margin-left: 3%;
+}
+
+.d_burger-container {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+}
+
+.d_top-nav-right {
+    width: 25rem;
     display: flex;
-    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
 }
-.driver-pic {
-    width: 40px;
-    height: 40px;
+
+.d_top-nav-pics img{
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    margin-left: 77%;
-    object-fit: cover;
+     object-fit: cover;
 }
-.driver-top-navigatio2 span{
-    margin-top: 2%;
+
+.d_top-nav-name {
+    margin-left: 5%;
     font-size: 1.4rem;
     font-weight: 500;
-    color: black;
 }
 
-@media screen and (max-width: 414px) {
-    .driver-top-navigatio2 {
-        margin-left: 40%;
+@media(min-width: 768px) {
+    .d_burger-container {
+        display: none;
     }
 }

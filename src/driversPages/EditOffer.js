@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import Swal from "sweetalert2";
 import { offerUpdate } from "../reducers/offerSlice";
 import './EditOffer.css';
 
@@ -27,8 +28,14 @@ const EditOffer = ({ location, destination, price, closeModal, id }) => {
           Authorization: `Bearer ${token}`,
         },
       });
+       Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: `${data.message}`,
+        showConfirmButton: false,
+        timer: 1500
+      })
        closeModal();
-       //window.location.reload()
       dispatch(offerUpdate(data.data));
      
     } catch (error) {

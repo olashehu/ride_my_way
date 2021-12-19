@@ -47,7 +47,7 @@ const DriversSignup = (props) => {
      const decoded = jwtDecode(isToken);
      localStorage.setItem("driver-info",JSON.stringify(decoded.data))
      dispatch(setCurrentDriver(decoded.data))
-     history.push("/driver/dashboard");
+     history.push("/driver/add-offer");
      const notify = () => toast(data.message);
      notify();
 
@@ -138,7 +138,7 @@ const DriversSignup = (props) => {
         <div className="have-account">
           <p>
             {" "}
-            Already a registered user?{" "}
+            Already a registered user?
             <Link to="/driver/login">
               <span>Login here</span>
             </Link>

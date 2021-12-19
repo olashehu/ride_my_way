@@ -1,20 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
-import {  useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 import MyOffer from "./MyOffer";
+import './MyOffer.css';
 import DriversNavbar from "../driversDashboard/DriversNavbar";
 import { displayOffer } from "../reducers/offerSlice";
 
 const DisplayOffer = () => {
 
-  const offers1 = useSelector((state) => state.offer);
-  console.log(offers1);
+  const getOfferFromStore = useSelector((state) => state.offer.offers);
   const dispatch = useDispatch();
-  //const history = useHistory();
-  
-  const [myOffer, setMyOffer] = useState([]);
+  const [myOffer, setMyOffer] = useState(getOfferFromStore);
 
   const getOffer = async () => {
 
@@ -47,9 +44,26 @@ const DisplayOffer = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      setMyOffer(myOffer.filter((offer) => offer.id !== id));
-      const notify = () => toast(data.message);
-      notify();
+       Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          setMyOffer(remainingOffer);
+          Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'error'
+         )
+        }
+      })
+       const remainingOffer = myOffer.filter((offer) => offer.id !== id)
+      
     } catch (err) {
       console.log(err.response);
     }
@@ -58,10 +72,11 @@ const DisplayOffer = () => {
   return (
     <DriversNavbar>
       <h1 style={{textAlign:'center'}}>My offer</h1>
-      <div style={{ display: "flex", flexWrap: "wrap", width: "96%", marginLeft: '4%' }}>
+      <div className='display-offer-container'>
         {myOffer.map((item, index) => {
           return (
             <MyOffer
+              key={index}
               location={item.location}
               destination={item.destination}
               price={item.price}

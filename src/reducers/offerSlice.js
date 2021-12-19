@@ -14,6 +14,7 @@ export const offerSlice = createSlice({
     setAddOffer: (state, action) => {
       state.offerAdded = action.payload.offer
     },
+    
     offerUpdate: (state, action) => {
       state.id = action.payload.id;
       state.location = action.payload.location;

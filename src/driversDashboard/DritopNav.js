@@ -9,18 +9,20 @@ const DritopNav = (props) => {
     const { firstName } = useSelector(state => state.driverAuth);
     return (
         <div>
-            <header className = "dri-top-nav">
-               <div className="top-navigation">
-                   <div className="driver-top-navigation1">
-                       <h2 className= 'dd'>RMW</h2>
-                       <FaBars className='driver-toggle' onClick={props.toggle}/>
-                   </div>
-                   <div className="driver-top-navigatio2">
-                       <span>{firstName}</span>
-                       <img src="/avatar.png" alt="" className='driver-pic'/>
-                   </div>
-               </div>
-            </header>
+            <nav className='d_top-nav'>
+                <div className="d_top-nav-left">
+                    <h1>RMW</h1>
+                    <span className='d_burger-container'><FaBars onClick={props.toggle}/></span>
+                </div>
+                <div className="d_top-nav-right">
+                    <div className='d_top-nav-pics'>
+                        <img src="/avatar.png" alt=""/>
+                    </div>
+                    <div className='d_top-nav-name'>
+                        <span>{firstName}</span>
+                    </div>
+                </div>
+            </nav>
         </div>
             
     )

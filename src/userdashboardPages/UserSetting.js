@@ -5,24 +5,23 @@ import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSide
 import "./UserSetting.css";
 import { setCurrentUser } from '../reducers/authslice';
 
-const UserSetting = (props) => {
-    const {firstName, lastName, email} = props.auth;
+const UserSetting = () => {
+    const data = useSelector(state => state.auth);
     const dispatch = useDispatch();
     const [updateUser, setUpdateUser] = useState({
-        firstName,
-        lastName,
-        email
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email
     });
 
     function handleChange(e){
-        setUpdateUser({...prev => prev, [e.target.name]: e.target.value})
+        setUpdateUser({[e.target.name]: e.target.value})
     };
 
     async function updateProfile(e){
         e.preventDefault();
-        const token = JSON.parse(localStorage.getItem('token'))
-        console.log(token);
       try {
+      const token = JSON.parse(localStorage.getItem('token'));
       const{ data } = await axios({
        method: 'put',
        baseURL: 'http://localhost:3000/v1/user/profile-page',
@@ -39,7 +38,7 @@ const UserSetting = (props) => {
   }
     return (
         <UsersSidebarNav>
-            <form className = 'user__profile__container'>
+            <form className = 'user__profile__container' onSubmit={updateProfile}>
                 <div className="user__profile__header">
                     <h1>My Profile</h1>
                     <p>Add information about yourself</p>
@@ -55,18 +54,9 @@ const UserSetting = (props) => {
                         <input type="email" name="email"  value={updateUser.email} disabled/>
                     </div>
                 </div>
-                <div className='center'><button className="user__profile__edit" onClick={ updateProfile }>Save</button></div>   
+                <div className='center'><button className="user__profile__edit">Save</button></div>   
             </form>
         </UsersSidebarNav>
     )
 }
-
-const mapStateToProps =(state) =>{
-    console.log('user setting function', state);
-  return {
-    auth: state.auth
-}
-}
-export default connect(mapStateToProps)(UserSetting);
-
-//export default UserSetting;
+export default UserSetting;

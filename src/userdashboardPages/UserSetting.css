@@ -21,12 +21,15 @@ div.user__profile__header {
 .profile__form input {
     padding: 10px 5px;
     width: 70%;
-    margin: 0 auto;
+    margin: 0 13%;
 }
 
 .user__profile__edit {
-    padding: 10px 30px;
+    padding: .8rem 4rem;
     border: 1px solid #44ce6f;
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 .user__profile__edit:hover{
     background-color: #44ce6f;
@@ -35,6 +38,7 @@ div.user__profile__header {
     display: flex;
     justify-content: center;
     margin-top: 1.5%;
+    margin: 1% 0;
 }
 
 

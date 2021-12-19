@@ -1,58 +1,100 @@
-.nav-link-container{
+.nav-link-container {
     background-color: #000;
-    width: 200px;
+    width: 12.1875rem;
     height: 100vh;
-    z-index: 1;
+    position: fixed;
+    left: -100%;
+    z-index: 10;
+    transition: .3s ease-in-out;
 }
 
-.nav-link-container a {
-     color:#fff;
-     display: block;
-     width: 100%;
-     line-height: 40px;
-     text-decoration: none;
-     padding-left: 40px;
-     box-sizing: border-box;
-     position: relative;
-     top: .5%;
-}
-.nav-link-container a:hover {
-    background-color: #44ce6f;
-    color: black;
-    font-size: 1.2rem;
-    font-weight: 500;
+.nav-link-container2 {
+    left: 0;
+    
 }
 
-.dashboard-layout{
+.links-group {
+    position: relative;
+    top: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link-container {
+    color: white;
+}
+
+ .links-items {
+    width: 100%;
+    margin-top: .6rem;
+}
+
+.fas {
+    width: 30%;
+    text-align: center;
+}
+
+.links-items a {
+    width: 50%;
+    display: inline-block;
+}
+
+.links-items:hover {
+    cursor: pointer;
+    background-color: var(--clr-green-dark);
+    color: #000;
+}
+
+.dashboard-layout {
     display: grid;
     grid-template-areas: "a a" 
                          "b c";
     grid-template-rows: 60px 100%;
-    grid-template-columns: 10% 89%;   
+    grid-template-columns: 5% 95%;   
 }
 
-.dashboard-layout2{
+.dashboard-layout2 {
      display: grid;
      grid-template-areas: "a a"
      "b c";
      grid-template-rows: 60px 100%;
-     grid-template-columns: 4% 96%;
+     grid-template-columns: 3% 96%;
 }
 
-.topnav{
+.topnav {
     grid-area: a;   
 }
 
-.sidenav{
-    grid-area: b;  
+.sidenav {
+    grid-area: b; 
 }
 
-.child{
-    grid-area: c; 
+.child {
+    grid-area: c;
+    margin-top: 15px;
 }
 
-@media screen and (max-width: 1024px) {
-    .nav-link-container{
-        position: absolute;
+@media(min-width: 768px) {
+    .nav-link-container {
+        left: 0%;
+    }
+
+    .child {
+        width: 76%;
+        margin-left: 175px;
+       
+    }
+}
+
+@media(min-width: 1024px) {
+    .child {
+        width: 83.2%;
+    }
+}
+@media(min-width: 1536px) {
+    .child {
+        width: 89%;
     }
 }

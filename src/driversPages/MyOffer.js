@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+
 import EditOffer from "./EditOffer";
-import "./MyOffer.css";
 
 const customStyles = {
   content: {
-    top: "10%",
-    left: "4%",
+    top: "0%",
+    left: "0%",
+    width: '100%',
+    height: '100%',
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     transform: "translate(-0%, -0%)",
   },
@@ -24,28 +26,28 @@ const MyOffer = ({offerId, location, destination, price, handleDelete, openModal
   }
 
   return (
-    <div className="card-container">
-      <div className="card-item">
-        <h3 className="card-content-1">Location</h3>
-        <h3 className="card-content_2">{location}</h3>
+    <div className="offer-wrapper">
+      <div className="offer-card-wrapper">
+        <h3 className="card-content-left">Location</h3>
+        <h3 className="card-content-right">{location}</h3>
       </div>
 
-      <div className="card-item">
-        <h3 className="card-content-1">Destination</h3>
-        <h3 className="card-content_2">{destination}</h3>
+      <div className="offer-card-wrapper">
+        <h3 className="card-content-left">Destination</h3>
+        <h3 className="card-content-right">{destination}</h3>
       </div>
 
-      <div className="card-item">
-        <h3 className="card-content-1">Price</h3>
-        <h3 className="card-content_2">{price}</h3>
+      <div className="offer-card-wrapper" style={{border:'none'}}>
+        <h3 className="card-content-left">Price</h3>
+        <h3 className="card-content-right">{price}</h3>
       </div>
-      <div className="card-item card-actions">
+      <div className="offer-card-wrapper card-actions">
         <button
-          className="delete-card-offer-action"
+          className="card-delete"
           onClick={() => handleDelete(offerId)}>
           Delete
         </button>
-        <button className="edit-card-offer-action" onClick={openModal}>
+        <button className="card-edit" onClick={openModal}>
           Edit
         </button>
       </div>

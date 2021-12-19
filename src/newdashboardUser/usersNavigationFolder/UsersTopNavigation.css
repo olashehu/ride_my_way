@@ -1,6 +1,5 @@
 .nav-user-top{
    background-color: #44ce6f;
-
    height: 70px;
    position: relative; 
    width: 100%;
@@ -28,12 +27,6 @@
 .opt-center{
     text-align: center;
 }
-
-/* @media screen and (max-width: 1024px) {
-   .toggle-user{
-       display: inline;
-   }
-} */
 
 @media screen and (max-width: 415px) {
     .profile-container {

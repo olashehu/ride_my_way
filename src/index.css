@@ -17,9 +17,10 @@
  
   /*-------------Global styling-------------------*/
   html {
-     box-sizing: border-box;
-     line-height:1.5;
-     font-family: 'Roboto';
+    box-sizing: border-box;
+    line-height:1.5;
+    font-family: 'Roboto';
+
   }
   
   *,
@@ -84,7 +85,6 @@
     color: rgb(0, 0, 0);
     font-size: 1.4rem;
     text-transform: capitalize;
-    letter-spacing: var(--spacing);
     display: block;
     padding: 0.5rem 1rem;
     transition: var(--transition);
@@ -107,7 +107,7 @@
     top: 40%;
     left: 40%;
     transform: translate(-50%, -50%);
-    color: #fff;
+    color: var(--clr-white);
     animation: moveInLeft;
     animation: ease-out;
   }
@@ -135,14 +135,14 @@
     .btn-animated {
       animation: moveInBottom 0.5s ease-out 0.75s;
       animation-fill-mode: backwards;
-      background-color: #fff;
+      background-color: var(--clr-white);
       border: 1px solid #44ce6f;
       color: #000;
       font-size: 1.2rem;
       font-weight: 700;
     }
     .btn-animated:hover {
-      background-color: #44ce6f;
+      background-color: var(--clr-green-dark);
     }
     .btn:link,
     .btn:visited {
@@ -171,7 +171,7 @@
      .underline {
        width: 60px;
        height: 10px;
-       background-color: #44ce6f;
+       background-color: var(--clr-green-dark);
      }
 
      .how-it-works-container {
@@ -248,7 +248,7 @@
     padding: 1.5rem 2rem;
   }
   p.show-driver-content {
-    color: black;
+    color: #000;
     font-size: 1.2rem;
     font-weight: 500;
   }
@@ -282,7 +282,7 @@
     align-items: center;
   }
   .testimonial-flex-content {
-    border: 1px solid #44ce6f;
+    border: 1px solid var(--clr-green-dark);
     margin-top: 1rem;
     width: 30%;
     margin: 1% 1.3%;
@@ -306,7 +306,7 @@
 
   /*------Start of User register styling------ */
    .container-sign {
-    background-color: white;
+    background-color: var(--clr-white);
     border-radius: 7px;
     display: block;
     overflow: hidden;
@@ -388,7 +388,7 @@
 
   /* ----Start of user/driver login styling----- */
   .container-login {
-    background-color: white;
+    background-color: var(--clr-white);
     border-radius: 7px;
     display: block;
     overflow: hidden;
@@ -467,7 +467,7 @@
 
   /* -----Forget password styling------ */
   .container-forgetPass {
-    background-color: white;
+    background-color: var(--clr-white);
     border-radius: 7px;
     display: block;
     overflow: hidden;
@@ -482,59 +482,6 @@
   .logo {
     height: 40px;
   }
-
-  /* start of user info styling */
-
-  /* .user_info__header {
-    text-align: center;
-  }
-
-  .user-info__container{
-    width: 80%;
-    height: 220px;
-    margin-top: 1%;
-    margin-left: 8%;
-    margin-right: 2%;
-    border: 1px solid whitesmoke;
-    
-  }
-
-  .user-info__container div{
-    width: 98%;
-    border-top: 1px solid black;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 2%;
-    position: relative;
-  }
-  .user__infos {
-    margin-left: 10%;
-  }
-
-  .user-info__container button{
-    padding: 10px 56px;
-    margin-top: 10px;
-    margin-left: 35%;
-    border: 1px solid green;
-  }
-
-  .bottom{
-    border-bottom: 1px solid black;
-  }
-
-  .user_profile_icon{
-    position: absolute;
-    left: 97%;
-    width: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.644)
-  } */
-
-  /* end of user info styling */
-
-/* .img-section-name{
-  display: flex;
-} */
 
   /* Animation */
   @keyframes moveInLeft{
@@ -598,7 +545,7 @@
     }
 
     .social-icons a:hover {
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid var(--clr-white);
       padding-bottom: 10px;
     }
   }
@@ -645,6 +592,6 @@
       .btn:link,
       .btn:visited {
         padding: 10px 12px;
-        background-color: #44ce6f;
+        background-color: var(--clr-green-dark);
       }
     }

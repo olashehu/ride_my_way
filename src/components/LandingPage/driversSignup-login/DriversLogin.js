@@ -36,7 +36,7 @@ const DriversLogin = () => {
       let decoded = jwtDecode(isToken);
       localStorage.setItem("driver-info",JSON.stringify(decoded.data));
       dispatch(driverLoggedIn(decoded.data));
-      history.push('/driver/dashboard');
+      history.push('/driver/add-offer');
       const notify = () => toast(data.message);
       notify();
     } catch (error) {
