@@ -1,0 +1,122 @@
+
+  nav {
+    background: var(--clr-green-dark);
+    box-shadow: var(--light-shadow);
+  }
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+  }
+
+  .logo-text {
+    font-size: 2.6rem;
+    color: rgb(0, 0, 0);
+    animation: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+  }
+
+  .nav-toggle {
+    color: var(--clr-black);
+    background: transparent;
+    border-color: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .nav-toggle > svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  .links-container {
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  li.links-item-container{
+    margin-left: 3%;
+  }
+
+  .links a {
+    color: rgb(0, 0, 0);
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+  }
+
+   @media screen and (min-width: 800px) {
+    .nav-center {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .nav-header {
+      padding: 0;
+      flex-grow: 1;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .links-container {
+      height: auto !important;
+      flex-grow: 2;
+    }
+
+    .links {
+      display: flex;
+    }
+
+    .links a {
+      padding: 0;
+      margin: 0 0.5rem;
+    }
+
+    .links a:hover {
+      padding: 0;
+      background: transparent;
+    }
+
+    .social-icons {
+      display: flex;
+      font-size: 1.5rem;
+      margin-left: auto;  
+    }
+   
+    .social-icons a {
+      margin: 0 .8rem;
+      color: #000;
+      transition: all 0.3s linear
+    }
+
+    .social-icons a:hover {
+      border-bottom: 1px solid #fff;
+      padding-bottom: 10px;
+    }
+  }
+
+   @media screen and (max-width: 790px) {
+     .social-icons {
+       display:block;
+     } 
+     
+     .social-icons a > span {
+      padding-left: 1.2rem;
+     }
+
+     li.links-item-container{
+       margin: 0;
+     }
+   }

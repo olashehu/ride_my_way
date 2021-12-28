@@ -1,9 +1,10 @@
-/** @format */
 
 import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { useSelector } from "react-redux";
+
+import Button from "../Utility/Button/Button";
 
 const UserRide = ({
   id,
@@ -18,7 +19,9 @@ const UserRide = ({
   const driverEmail = useSelector((state) => state.offer.offers[0].email);
   const driverFirstName = useSelector((state) => state.offer.offers[0].firstName);
   const [disableJoinOfferButton, setDisableJoinOfferButton] = useState(false);
-  const joinOffer = async (id) => {
+
+  const handleJoinRide = async (id) => {
+    
     setDisableJoinOfferButton(true);
     const token = JSON.parse(localStorage.getItem("token"));
     try {
@@ -50,42 +53,40 @@ const UserRide = ({
   };
 
   return (
-    <>
-      <>
-        <div className="user__join-ride-flex-container">
-          <div className="first__ join-ride-flex-item">
-            <img src="/avatar.png" alt="" className="driver-image" />:
-            <span className="im">
-              {onUserCardFirstname} {onUserCardLastName}
-            </span>
-          </div>
-          <div className="second__ join-ride-flex-item">
-            <span className="in">Location</span>:
-            <span className="im">{onUserCardLocation}</span>
-          </div>
-          <div className="third__ join-ride-flex-item">
-            <span className="in">Destination</span>:
-            <span className="im">{onUserCardDestination}</span>
-          </div>
-          <div className="fourth__ join-ride-flex-item">
-            <span className="in">Price</span>:
-            <span className="im">{onUserCardPrice}</span>
-          </div>
-          <div className="fifth__ join-ride-flex-item">
-            <span className="in">Contact</span>:
-            <span className="im">{onUserCardPhone}</span>
-          </div>
-          <div className="sixth__ jon-ride-flex-item">
-            <button
-              disabled={disableJoinOfferButton}
-              type="submit"
-              onClick={() => joinOffer(id)}>
-              Join ride
-            </button>
-          </div>
-        </div>
-      </>
-    </>
+    <div className="join-ride-wrapper">
+      <div className="join-ride-profile-wrapper">
+        <img src="/avatar.png" alt="" />
+        <span>
+          {onUserCardFirstname} {onUserCardLastName}
+        </span>
+      </div>
+      <div className="join-ride-flex-wrapper">
+        <span className="join-ride-left-wrapper">Location</span>
+        <span className="join-ride-right-wrapper location-wrapper">
+          {onUserCardLocation}
+        </span>
+      </div>
+      <div className="join-ride-flex-wrapper">
+        <span className="join-ride-left-wrapper">Destination</span>
+        <span className="join-ride-right-wrapper">{onUserCardDestination}</span>
+      </div>
+      <div className="join-ride-flex-wrapper">
+        <span className="join-ride-left-wrapper">Price</span>
+        <span className="join-ride-right-wrapper price-wrapper">{onUserCardPrice}</span>
+      </div>
+      <div className="join-ride-flex-wrapper">
+        <span className="join-ride-left-wrapper">Phone</span>
+        <span className="join-ride-right-wrapper contact-wrapper">{onUserCardPhone}</span>
+      </div>
+      <div className="join-ride-button-wrapper">
+        <Button
+          type="button"
+          buttonText="Join ride"
+          onClick={() => handleJoinRide(id)}
+          disabled={disableJoinOfferButton}
+        />
+      </div>
+    </div>
   );
 };
 

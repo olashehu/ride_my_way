@@ -1,0 +1,12 @@
+
+
+.input-wrapper {
+  display: block;
+  padding: 0.5rem 0.875rem;
+  width: 100%;
+}
+
+.label-wrapper {
+    font-size: 1.15rem;
+    color: #a5a5a5;
+}

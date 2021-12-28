@@ -10,7 +10,7 @@ import { setAddOffer } from "../../reducers/offerSlice";
 import DriversNavbar from "../../driversDashboard/DriversNavbar";
 import Button from "../../Utility/Button/Button";
 import "./AddOffer.css";
-import TextInput from "../../Utility/TextInput/TextInput";
+import TextInput from "../../Utility/TextInput/Input";
 
 const AddOffer = () => {
   const dispatch = useDispatch();

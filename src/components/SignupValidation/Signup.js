@@ -2,11 +2,12 @@ import React, {useState} from "react";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useHistory } from "react-router-dom";
-import NavigationBar from "../LandingPage/NavigationBar";
 import axios from 'axios';
 import { useDispatch, connect } from 'react-redux';
-import { setCurrentUser, signupError } from '../../reducers/authslice';
 import jwtDecode from "jwt-decode";
+
+import NavigationBar from "../LandingPage/Header/NavigationBar";
+import { setCurrentUser, signupError } from "../../reducers/authslice";
 
  toast.configure();
  const Signup = (props) => {
@@ -40,7 +41,7 @@ import jwtDecode from "jwt-decode";
       const decoded = jwtDecode(validToken);
       localStorage.setItem("user", JSON.stringify(decoded.data))
       dispatch(setCurrentUser(decoded.data))
-      history.push("/ride/offer")
+      history.push('/ride/offer')
       const notify = () => toast(data.message);
       notify();
     } catch (err) {

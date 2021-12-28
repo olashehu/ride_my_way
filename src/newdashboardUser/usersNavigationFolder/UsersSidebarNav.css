@@ -1,61 +1,89 @@
-.user-nav-link-container {
-    background-color: #000;
-    height: 100vh;
-    width: 200px;
-}
 
-.user-nav-link-container a {
-    color:#fff;
-    display: block;
-    width: 100%;
-    line-height: 30px;
-    text-decoration: none;
-    padding-left: 40px;
-    padding-top: 20px;
-    box-sizing: border-box;
-}
-.user-nav-link-container a:hover{
-    background-color: #44ce64;
-}
-
-.user-sidenav-container1 {
-    width: 100%;
-    display: grid;
-    grid-template-areas: "a a"
+ .user-sidenav-wrapper-1 {
+  display: grid;
+    grid-template-areas: "a a" 
                          "b c";
-    grid-template-rows: 70px 100%;
-    grid-template-columns: 14% 86%;
+    grid-template-rows: 61px 100%;
+    grid-template-columns: 14% 80%;
 }
 
-.user-sidenav-container2 {
-     display: grid;
+.user-sidenav-wrapper-2 {
+   display: grid;
      grid-template-areas: "a a"
                           "b c";
-     grid-template-rows: 70px 100%;
+     grid-template-rows: 61px 100%;
      grid-template-columns: 3% 97%;
 }
 
-.top-first-child {
+.nav-top-wrapper {
     grid-area: a;
 }
-
-.side-side-nav {
+.user-side-menu-wrapper {
     grid-area: b;
 }
 
-.user-child {
+.all-content-wrapper {
     grid-area: c;
 }
 
- @media screen and (max-width: 1024px){
-     .user-nav-link-container {
-         position: absolute;
-         z-index: 1;
-     }
-} 
 
-@media screen and (max-width: 414px) {
-    .user-small-sidebar {
-        display: none;
+.menu-links-wrapper-2 {
+  background-color: #000;
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  left: -100%;
+  z-index: 5;
+  transition: .3s ease-in-out;
+}
+
+.menu-links-wrapper {
+  left: 0;
+}
+
+.link-container {
+  color: #fff;
+}
+
+.link-container li {
+  padding-top: 1.7rem;
+}
+
+.logout-wrapper {
+  display: flex;
+  align-items: center;
+  color: white;
+  padding-top: 1.7rem;
+   
+}
+
+.logout-wrapper > svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 1.4rem;
+}
+.logout {
+  padding-left: 1rem;
+}
+
+@media(min-width: 768px){
+  .menu-links-wrapper-2 {
+    left: 0%;
+  }
+
+  .all-content-wrapper {
+    width: 76%;
+    margin-left: 175px;
+  }
+}
+
+@media(min-width: 1024px) {
+    .all-content-wrapper {
+        width: 83.2%;
+    }
+}
+@media(min-width: 1536px) {
+    .all-content-wrapper {
+        width: 89%;
     }
 }

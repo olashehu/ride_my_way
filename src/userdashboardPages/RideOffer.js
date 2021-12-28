@@ -2,9 +2,10 @@ import React, {useState, useEffect } from 'react';
 import { useSelector, useDispatch, connect } from "react-redux";
 import { displayOffer } from "../reducers/offerSlice";
 import axios from "axios";
+
 import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav';
 import UserRide from './UserRide';
-import "./UserRide.css";
+import './UserRide.css'
 
 
 const RideOffer = () => {
@@ -21,6 +22,7 @@ const RideOffer = () => {
             Authorization: `Bearer ${token}`,
           },
         });
+        console.log(data, 'offer data');
         dispatch(displayOffer({ offersFromDatabase: data.data }));
         setUserOffer(data.data);
       } catch (error) {
@@ -33,10 +35,12 @@ const RideOffer = () => {
    
     return (
       <UsersSidebarNav>
-        <div className="user__join-ride-contaner">
+        <h2 className='join-ride-header-wrapper'>Available ride</h2>
+        <div className="join-ride-grid-wrapper">
           {userOffer.map((user_card, index) => {
             return (
               <UserRide
+              key={index}
                 id={user_card.offerId}
                 onUserCardFirstname={user_card.firstName}
                 onUserCardLastName={user_card.lastName}

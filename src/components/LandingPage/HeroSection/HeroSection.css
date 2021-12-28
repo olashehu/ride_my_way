@@ -1,0 +1,77 @@
+/** @format */
+
+.banner-img {
+  background: url("../../../assest/hero_1_a.jpg");
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.banner-text {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: var(--clr-white);
+  animation: moveInLeft;
+  animation: ease-out;
+}
+
+.heading-primary-main {
+  animation: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+.banner-text h1 {
+  color: #000;
+  font-weight: 700;
+  font-size: 3rem;
+  animation: moveInLeft;
+  animation-duration: 2s;
+}
+
+.banner-text h2 {
+  color: #000;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.btn-animated {
+  border: 1px solid #44ce6f;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.btn-animated:hover {
+  background-color: var(--clr-green-dark);
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 20px 26px;
+  display: inline-block;
+  border-radius: 0.5rem;
+  position: relative;
+  bottom: 26px;
+}
+
+@media screen and (max-width: 320px) {
+  .banner-text {
+    top: 45%;
+  }
+
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+  .btn:link,
+  .btn:visited {
+    padding: 10px 12px;
+    background-color: var(--clr-green-dark);
+  }
+}

@@ -1,0 +1,54 @@
+
+
+div.show-driver-container {
+  margin-top: 4rem;
+}
+div.show-driver-section {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+h1.show-driver-header {
+  font-size: 2.4rem;
+}
+
+p.show-driver-para {
+  font-size: 1.5rem;
+}
+
+.flex-car {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.single-tour {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  margin: 2rem 0;
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  width: 400px;
+}
+
+.single-tour img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+.single-tour footer {
+  padding: 1.5rem 2rem;
+}
+p.show-driver-content {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.single-tour:hover {
+  box-shadow: var(--dark-shadow);
+}
