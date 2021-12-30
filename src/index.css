@@ -1,8 +1,4 @@
-/**
- * /* ---------Start of variables---------
- *
- * @format
- */
+
 
 :root {
   /* primary/main color */
@@ -42,15 +38,15 @@ a {
 ul {
   list-style-type: none;
 }
-/* --------*-----End of global styling---------------*----- */
+/*-----End of global styling-------*/
+
 .img-container {
   margin: 0 auto;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-/* --------*------End of how it works-----*------- */
 
 /*------Start of User register styling------ */
-.container-sign {
+/* .container-sign {
   background-color: var(--clr-white);
   border-radius: 7px;
   display: block;
@@ -66,7 +62,7 @@ ul {
 .header {
   text-align: center;
   padding: 20px;
-  /* background-color: var(--clr-green-dark) */
+  
 }
 
 .header h3 {
@@ -126,7 +122,7 @@ ul {
 .not_account_yet_container span {
   color: var(--clr-green-dark);
   cursor: pointer;
-}
+} */
 
 /* ----End of User register styling------ */
 

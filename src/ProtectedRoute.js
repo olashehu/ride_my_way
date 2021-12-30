@@ -7,7 +7,7 @@ import { setCurrentUser  } from './reducers/authslice';
 function ProtectedRoute({component: Component,...rest}) {
   const dispatch = useDispatch()
   let isAuthenticated = false
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user-token'));
   if(user){
     dispatch(setCurrentUser(user));
     isAuthenticated = true

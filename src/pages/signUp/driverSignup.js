@@ -1,41 +1,51 @@
 /** @format */
 
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { useDispatch, connect } from "react-redux";
 import { toast } from "react-toastify";
 toast.configure();
 
-import DriverSignup from "../../components/LandingPage/Account/DriverSignup";
+import DriverSignup from "../../components/LandingPage/Account/DriverSignup/DriverSignup";
+import { setCurrentDriver, driverSignupError } from "../../reducers/driverSlice";
 
-const DriverSignupPage = (props) => {
+const DriverSignupPage = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [driverSignup, setDriverSignup] = useState({
     firstName: "",
     lastName: "",
-    phone: "",
-    email: "",
-    password: "",
-    carModel: "",
-    modelYear: "",
-    licencePlate: "",
+    phone: '',
+    email: '',
+    password: ''
   });
-  const handleChange = (e) => {
+  function handleChange(e) {
     setDriverSignup({ ...driverSignup, [e.target.name]: e.target.value });
-  };
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-        console.log(setDriverSignup(driverSignup, 'page sign up'));
     try {
+      console.log("how");
       const { data } = await axios({
-        method: "POST",
-        baseURL: "https://3000/v1/driver/signup",
-        daata: driverSignup,
+        method: "post",
+        baseURL: "http://localhost:3000/v1/driver/signup",
+        data: driverSignup,
       });
+      const token = data.token;
+      localStorage.setItem("driver-token", JSON.stringify(token));
+      const isToken = JSON.parse(localStorage.getItem("driver-token"));
+      const decodedToken = jwtDecode(isToken);
+      localStorage.setItem("driver-info", JSON.stringify(decodedToken.data));
+      dispatch(setCurrentDriver(decodedToken.data));
+      history.push("/driver/add-offer");
+      const notify = () => toast(data.message);
+      notify();
       console.log(data);
-    } catch (error) {
-      console.log(error);
+    } catch(err) {
+       dispatch(driverSignupError({ userError: err.response.data.message }));
     }
   };
 
@@ -53,7 +63,5 @@ const mapStateToProps = (state) => {
     driverAuth: state.driverAuth,
   };
 };
+
 export default connect(mapStateToProps)(DriverSignupPage);
-
-
-// export default DriverSignupPage;

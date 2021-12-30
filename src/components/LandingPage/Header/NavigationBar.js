@@ -38,16 +38,16 @@ const NavigationBar = () => {
                 return(
                   <Link to={link.path} key={index}>
                     <li className="links-item-container" key={link.id}>
-                      <a>{link.title}</a>
+                      <span>{link.title}</span>
                     </li>
                   </Link>
                 )
               })}
               <div className="social-icons">
-                <Link to='/login'>
+                <Link to='/user/login'>
                   <span>Login</span>
                 </Link>
-                <Link to='/signup'>
+                <Link to='/user/signup'>
                   <span>Sign Up</span>
                 </Link>
               </div>

@@ -2,9 +2,9 @@ import React,{useState} from "react";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useHistory } from "react-router-dom";
-import NavigationBar from "../LandingPage/Header/NavigationBar";
+import NavigationBar from "../../Header/NavigationBar";
 import {  useDispatch, connect } from 'react-redux';
-import { userLoggedIn, signupError } from '../../reducers/authslice';
+import { userLoggedIn, signupError } from '../../../../reducers/authslice';
 import axios from 'axios';
 import jwtDecode from "jwt-decode";
  
@@ -91,7 +91,7 @@ import jwtDecode from "jwt-decode";
           <p>
             {" "}
             Don't have an account?{" "}
-            <Link to="/signup">
+            <Link to="/user/signup">
               <span>Register here</span>
             </Link>
           </p>

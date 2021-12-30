@@ -112,9 +112,9 @@
        display:block;
      } 
      
-     .social-icons a > span {
-      padding-left: 1.2rem;
-     }
+     /* .social-icons a > span {
+      padding-left: .2rem;
+     } */
 
      li.links-item-container{
        margin: 0;
