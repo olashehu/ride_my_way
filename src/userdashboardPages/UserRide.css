@@ -1,11 +1,85 @@
-.user__join-ride-contaner {
+
+.join-ride-grid-wrapper {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+}
+
+.join-ride-header-wrapper {
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+
+.join-ride-wrapper {
+    border: 1px solid greenyellow;
+    box-shadow: 0px 12px 30px 6px rgba(16, 113, 164, 0.104891);
+}
+
+.join-ride-profile-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.join-ride-profile-wrapper > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.join-ride-flex-wrapper {
+    display: flex;
+    align-items: center;
+    
+}
+
+.join-ride-left-wrapper {
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: .4rem;
+    padding-top: .2rem;
+}
+
+.join-ride-right-wrapper {
+    padding-top: .2rem;
+    padding-left: .785rem;
+}
+
+.price-wrapper {
+    padding-left: 3.5rem;
+}
+.contact-wrapper {
+    padding-left: 3rem;
+}
+.location-wrapper {
+    padding-left: 2.1rem;
+}
+
+.join-ride-button-wrapper button {
+    margin: 3% auto;
+    display: block;
+    padding: 8px 30px;
+    color: black;
+    font-size: 1rem;
+    border: 1px solid #44ce6f;
+}
+
+.join-ride-button-wrapper button:hover{
+    background-color: #44ce6f;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* .user__join-ride-contaner {
     width: 97%;
     margin: .5% 3%;
     display: flex;
     flex-wrap: wrap;
 }
-.user__join-ride-flex-container{
-    width: 27%;
+
+.join-ride-wrapper{
     position: relative;
     margin-top: 2%;
     margin-left: 1%;
@@ -13,7 +87,7 @@
     box-shadow: 0px 12px 30px 6px rgba(16, 113, 164, 0.104891);
 }
 
-.driver-image{
+.join-ride-image-wrapper{
     width: 70px;
     height: 60px;
     border-radius: 50%;
@@ -55,4 +129,4 @@
     background: #999;
     color: #555;
     cursor: not-allowed;
-}
+} */

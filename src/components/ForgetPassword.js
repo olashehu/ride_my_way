@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationBar from './LandingPage/NavigationBar'
+import NavigationBar from './LandingPage/Header/NavigationBar'
 
 const ForgetPassword = () => {
     return (

@@ -10,7 +10,7 @@ import { setAddOffer } from "../../reducers/offerSlice";
 import DriversNavbar from "../../driversDashboard/DriversNavbar";
 import Button from "../../Utility/Button/Button";
 import "./AddOffer.css";
-import TextInput from "../../Utility/TextInput/TextInput";
+import Input from "../../Utility/TextInput/Input";
 
 const AddOffer = () => {
   const dispatch = useDispatch();
@@ -67,8 +67,7 @@ const AddOffer = () => {
         </header>
         <div className="add-offer-input-wrapper">
           <div className="input-field-wrapper">
-            <label htmlFor="location"></label>
-            <TextInput
+            <Input
               type="text"
               name="location"
               placeholder="Enter your location here..."
@@ -78,8 +77,7 @@ const AddOffer = () => {
             />
           </div>
           <div className="input-field-wrapper">
-            <label htmlFor="destination"></label>
-            <TextInput
+            <Input
               type="text"
               name="destination"
               id=""
@@ -90,8 +88,7 @@ const AddOffer = () => {
             />
           </div>
           <div className="input-field-wrapper">
-            <label htmlFor="price"></label>
-            <TextInput
+            <Input
               type="text"
               name="price"
               id=""

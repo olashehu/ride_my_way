@@ -1,6 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400&display=swap');
 
-.car_list {
+/* .car_list {
      width: 90vw;
      max-width: 1470px;
      margin: 5rem auto;
@@ -54,5 +54,4 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-}
- */
+} */
