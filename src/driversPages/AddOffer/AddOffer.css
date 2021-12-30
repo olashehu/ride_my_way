@@ -1,0 +1,60 @@
+.addoffer-wrapper {
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+header.add-offer-title-wrapper {
+    padding-bottom: 0.3rem;
+    letter-spacing: .1rem;
+}
+
+.input-field-wrapper {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+
+.input-field-wrapper input {
+    padding: 0.5rem;
+    border: 1.5px solid #000;
+    width: 20rem;
+    border-radius: var(--radius);
+}
+
+.input-field-wrapper input:focus{
+    outline-color: var(--clr-green-dark);
+}
+.add-offer-button-wrapper {
+    padding: 0.5rem 0rem;
+}
+
+.add-offer-button-wrapper button {
+    padding: 0.6rem 0.8rem;
+    width: 20rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-color: var(--clr-green-dark);
+    background: var(--clr-white)
+}
+.add-offer-button-wrapper button:hover {
+    cursor: pointer;
+    background: var(--clr-green-dark);
+    border: none;
+}
+
+@media(min-width: 768px) {
+    .addoffer-wrapper {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .input-field-wrapper input {
+        width: 70%;
+        max-width: 32rem;
+    }
+
+    .add-offer-button-wrapper button {
+        padding: 0.6rem 1rem;
+        width: 10rem;
+        
+    }
+}

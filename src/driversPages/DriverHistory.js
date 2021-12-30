@@ -1,48 +1,87 @@
-import React from 'react'
-//import DritopNav from '../driversDashboard/DritopNav'
-import DriversNavbar from '../driversDashboard/DriversNavbar'
-import './DriverHistory.css'
+/** @format */
+
+import axios from "axios";
+import moment from "moment";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import DriversNavbar from "../driversDashboard/DriversNavbar";
+import { displayHistory } from "../reducers/offerSlice";
+import "../tablecomponent/Table.css";
+import Pagination from "../userdashboardPages/Pagination";
 
 const DriverHistory = () => {
-    return (
-            <DriversNavbar>
-               <div className="driver_setiing_page">
-                    <h1 className = 'header_history'>TRIP HISTORY</h1>
+  const state = useSelector((state) => state.offer.getHistory);
+  const dispatch = useDispatch();
+  const [driverHistory, setDriverHistory] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(7);
 
-                    <div className="trip-history-details-drivers">
-                        <div className="first___child-details same" style={{color:'green'}}>Pickup Location <span  className = 'column-span'>:</span></div>
-                        <div className="second__child__details same">15 Allen Avenue Ikeja Lagos</div>
-                    </div>
+  const getHistoryData = async () => {
+    try {
+      const token = JSON.parse(localStorage.getItem("driver-token"));
+      const { data } = await axios({
+        baseURL: "http://localhost:3000/v1/driver/ride-history",
+        method: "get",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      dispatch(displayHistory({ historyFromDatabase: data.data }));
+      setDriverHistory(data.data);
+      console.log(driverHistory);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-                    <div className="trip-history-details-drivers">
-                        <div className="first___child-details same" style={{color:'red'}}>Drop Location <span  className = 'column-span'>:</span></div>
-                        <div className="second__child__details same">25 Adeniyi Johnson Ikeja Lagos</div>
-                    </div>
+  useEffect(() => {
+    getHistoryData();
+  }, []);
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = driverHistory.slice(indexOfFirstPost, indexOfLastPost);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-                    <div className="trip-history-details-drivers">
-                        <div className="first___child-details same">Date <span  className = 'column-span'>:</span></div>
-                        <div className="second__child__details same">15/04/2021</div>
-                    </div>
-
-                    <div className="trip-history-details-drivers">
-                        <div className="first___child-details same">Status <span  className = 'column-span'>:</span></div>
-                        <div className="second__child__details same">Trip End</div>
-                    </div>
-
-                    <div className="trip-history-details-drivers color">
-                        <div className="first___child-details same">Customer Name <span  className = 'column-span'>:</span></div>
-                        <div className="second__child__details same">Pauliski  <span><img src="/olashehu.jpg" alt="" className='img-customer'/></span></div>
-                    </div>
-
-                    <div className="trip-history-details-drivers color">
-                        <div className="first___child-details same">Phone <span className = 'column-span'>:</span></div>
-                        <div className="second__child__details same">090888888888</div>
-                    </div>
-               </div>
-            </DriversNavbar>
-           
-    
-    )
-}
-
-export default DriverHistory
+  return (
+    <DriversNavbar>
+      <div className="table-container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>User-id</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Destination</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentPosts.map((data, index) => {
+              return (
+                <tr>
+                  <td data-label='S/N'>{data.historyId}</td>
+                  <td data-label="User-id">{data.userId}</td>
+                  <td data-label="Date">{moment(data.createdAt).format("LLL")}</td>
+                  <td data-label="Location">{data.location}</td>
+                  <td data-label="Destination">{data.destination}</td>
+                  <td data-label="Price">{data.price}</td>
+                  <td data-label="Status">
+                    <span className="text_open">{data.status}</span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+         <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={driverHistory.length}
+            paginate={paginate}
+          />
+      </div>
+    </DriversNavbar>
+  );
+};
+export default DriverHistory;

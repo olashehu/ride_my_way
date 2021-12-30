@@ -1,0 +1,107 @@
+
+.accept-reject-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 12px 30px 6px rgba(16, 113, 164, 0.104891);
+    color: #fff;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.3125rem;
+    padding-bottom: 0.5rem;
+}
+
+.accept-reject-flex-container {
+    display: flex;
+    padding-left: .5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.2rem;
+}
+
+.accept-reject-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+.accept-reject-flex-container h4.passenger-name{
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+}
+
+/* .passenger-to-driver {
+    padding-left: .875rem;
+} */
+
+.accept-reject-flex-container button {
+    padding: 0.5rem 1.875rem;
+    font-size: 1.01em;
+    color: #fff;
+}
+
+button.not-accept-offer{
+    background-color: green;
+}
+
+button.accept-offer {
+    display: none;
+}
+
+button.not-reject-offer {
+    background-color: red;
+    margin-left: 0.8rem;
+}
+
+button.reject-offer {
+    display: none;
+}
+
+.not-start-trip{
+    display: none;
+}
+
+button.start-trip {
+    display: block;
+    border: none;
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.not-end-trip {
+    display: none;
+}
+
+button.end-trip{
+    display: block;
+    border: none;
+    background-color: yellow;
+    color: black;
+}
+
+.accept-reject-flex-container button:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .request-ride-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .accept-reject-container {
+      width: 500px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+}
+
+@media(min-width: 1024px) {
+    .accept-reject-container {
+        width: 390px;
+       margin: 0;
+       margin-top: 0.3rem;
+       margin-bottom: 0.4rem;
+       margin-left: 0.6%;
+       margin-right: 0.2%;
+    }
+}

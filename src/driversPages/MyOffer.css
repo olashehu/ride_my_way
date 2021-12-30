@@ -1,0 +1,46 @@
+.display-offer-container {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+}
+
+.offer-wrapper {
+    margin: 0.475rem 0;
+    padding: 1rem 0;
+    box-shadow: 0px 12px 30px 6px rgba(66, 113, 164, 0.104891);
+}
+
+.offer-card-wrapper {
+    display: flex;
+    padding: 0.3rem 0;
+}
+.offer-card-wrapper .card-content-left {
+    padding-right: 0.875rem;
+    padding-left: .8rem;
+}
+
+.card-actions {
+   padding: 8px 0px;
+}
+
+.card-actions button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 2%;
+}
+.card-actions button:hover {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.card-actions button.card-edit{
+    margin-left: 3%;
+    background-color: #44ce6f;
+}
+.card-actions button.card-delete {
+    background-color: crimson;
+    color: #f1f1f1;
+}

@@ -1,0 +1,58 @@
+.user__join-ride-contaner {
+    width: 97%;
+    margin: .5% 3%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.user__join-ride-flex-container{
+    width: 27%;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
+    box-shadow: 0px 12px 30px 6px rgba(16, 113, 164, 0.104891);
+}
+
+.driver-image{
+    width: 70px;
+    height: 60px;
+    border-radius: 50%;
+    
+}
+.join-ride-flex-item {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+.in{
+    font-weight: 700;
+    font-size: 1rem;
+    width: 25%;
+    text-align: center;
+}
+.im{
+  font-weight: 600;
+  font-size: 1rem;
+  width: 73%;
+  margin-left: 2%;
+}
+.sixth__ button{
+    margin: 3% auto;
+    display: block;
+    padding: 8px 30px;
+    color: black;
+    font-size: 1rem;
+    border: 1px solid #44ce6f;
+}
+.sixth__ button:hover{
+    background-color: #44ce6f;
+    color: black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.sixth__button:disabled {
+    background: #999;
+    color: #555;
+    cursor: not-allowed;
+}
