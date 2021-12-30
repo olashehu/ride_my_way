@@ -1,19 +1,22 @@
 
 
-.driver-login-header-wrapper {
+.login-wrapper {
+    padding: 2rem 1.5rem;
+    box-shadow: 0px 12px 30px 6px rgba(66, 113, 164, 0.104891);
+    max-width: 600px;
+    margin: 4% auto;
+}
+
+.login-header-wrapper {
     text-align: center;
 }
 
-.driver-login-wrapper {
-    padding: 0 1.5rem;
-    padding-bottom: 3rem;
-    box-shadow: 0px 12px 30px 6px rgba(66, 113, 164, 0.104891);
-    max-width: 600px;
-    margin: 10% auto;
+.login-input-wrapper {
+    margin-top: 3%;
 }
 
-.driver-login-button-wrapper {
-     margin-top: 1.7rem;
+.login-button-wrapper {
+    margin-top: 1.7rem;
     display: block;
     width: 100%;
     padding: .6rem 0;
@@ -28,14 +31,14 @@
     cursor: pointer;
 }
 
-.back-to-driver-signup-wrapper {
+.back-to-signup-wrapper {
     padding-top: 1rem;
 }
 
-.back-to-driver-signup-wrapper > a {
+.back-to-signup-wrapper > a {
     margin-left: 10%;
     color: #44ce6f;
 }
-.back-to-driver-signup-wrapper > a, span {
+.back-to-signup-wrapper > a, span {
     font-size: 1.25rem;
 }

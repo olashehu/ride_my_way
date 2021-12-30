@@ -16,39 +16,9 @@ const UsersSidebarNav = (props) => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    history.push("/login");
+    history.push("/user/login");
   };
   return (
-    // <div className={`${toggle ? "user-sidenav-container1" : "user-sidenav-container2"}`}>
-    //   <div className="top-first-child">
-    //     <UsersTopNavigation togle={handleChange} />
-    //   </div>
-
-    //   <div className="side-side-nav">
-    //     <div
-    //       className="user-nav-link-container"
-    //       style={{ display: `${!toggle ? "none" : ""}` }}>
-    //       <Link to="/ride/offer">
-    //         {" "}
-    //         <div>Available ride</div>
-    //       </Link>
-    //       <Link to="/user-dashboard">
-    //         <div> Ride History</div>
-    //       </Link>
-    //       <Link to="/user-notification">
-    //         <div> Notification</div>
-    //       </Link>
-    //       <Link to="/user/profile">
-    //         <div>Profile</div>
-    //       </Link>
-    //       <Link onClick={onLogOut}>
-    //         <div>Logout</div>
-    //       </Link>
-    //     </div>
-    //   </div>
-    //   <div className="user-child">{props.children}</div>
-    // </div>
-
     <>
       <div className={`${toggle ? "user-sidenav-wrapper-1" : "user-sidenav-wrapper-2"}`}>
         <div className="navtop-wrapper">

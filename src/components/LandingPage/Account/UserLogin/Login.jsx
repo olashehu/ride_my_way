@@ -2,18 +2,18 @@
 
 import { Link } from "react-router-dom";
 
+import Button from "../../../../Utility/Button/Button";
 import Input from "../../../../Utility/TextInput/Input";
 import Footer from "../../Footer/Footer";
 import NavigationBar from "../../Header/NavigationBar";
-import Button from "../../../../Utility/Button/Button";
-import "./DriverLogin.css";
-
-const DriverLogin = ({ handleChange, handleSubmit, data }) => {
+ 
+ 
+ const Login = ({handleChange, handleSubmit, data}) => {
   return (
     <>
-      <NavigationBar></NavigationBar>
+      <NavigationBar />
       <div className="login-wrapper">
-        <h1 className="login-header-wrapper">Login as driver</h1>
+        <h1 className="login-header-wrapper">Login as a user</h1>
         <form action="post" onSubmit={handleSubmit}>
           <div className="login-input-wrapper">
             <Input
@@ -39,15 +39,11 @@ const DriverLogin = ({ handleChange, handleSubmit, data }) => {
               value={data.password}
             />
           </div>
-          <Button
-            type="submit"
-            buttonText="Login"
-            className="login-button-wrapper"
-          />
+          <Button type="submit" buttonText="Login" className="login-button-wrapper" />
 
           <div className="back-to-signup-wrapper">
             <span>Don't have an account</span>
-            <Link to="/driver/signup">Register here</Link>
+            <Link to="/user/signup">Register here</Link>
           </div>
         </form>
       </div>
@@ -55,4 +51,5 @@ const DriverLogin = ({ handleChange, handleSubmit, data }) => {
     </>
   );
 };
-export default DriverLogin;
+
+export default Login;
