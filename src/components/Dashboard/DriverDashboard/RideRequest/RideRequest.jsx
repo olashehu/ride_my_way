@@ -1,12 +1,14 @@
-/** @format */
+
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { displayHistory } from "../reducers/offerSlice";
 import { toast } from "react-toastify";
-import "./Accept_RejectOffer.css";
 
-const Accept_RejectOffer = ({
+import { displayHistory } from "../../../../reducers/offerSlice";
+import "./RideRequest.css";
+
+const RideRequest = ({
   historyId,
   userId,
   firstName,
@@ -128,4 +130,4 @@ const Accept_RejectOffer = ({
   );
 };
 
-export default Accept_RejectOffer;
+export default RideRequest;

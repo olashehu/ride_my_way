@@ -1,7 +1,9 @@
+
+
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-import EditOffer from "./EditOffer";
+import EditOffer from "../EditOffer/EditOffer";
 
 const customStyles = {
   content: {

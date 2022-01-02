@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import DriversNavbar from '../driversDashboard/DriversNavbar';
-import Accept_RejectOffer from './Accept_RejectOffer';
-import { displayHistory } from '../reducers/offerSlice';
-import './Accept_RejectOffer.css'
+import { displayHistory } from '../../../../reducers/offerSlice';
+import DriversNavbar from '../../../../driversDashboard/DriversNavbar';
+import "../../../../components/Dashboard/DriverDashboard/RideRequest/RideRequest.css"
+import RideRequest from '../../../../components/Dashboard/DriverDashboard/RideRequest/RideRequest';
 
-const RideRequest = ({data}) => {
+const RideRequestPage = ({data}) => {
   const dispatch = useDispatch();
   const joinRide = useSelector(state => state.offer.getHistory);
   const [userJoinRide, setUseJoinRide] = useState(joinRide);
@@ -41,7 +41,7 @@ const RideRequest = ({data}) => {
       >
         {userJoinRide.map((user, index) => {
           return (
-            <Accept_RejectOffer
+            <RideRequest
               key={user.historyId} 
               historyId={user.historyId}
               userId={user.userId}
@@ -60,4 +60,4 @@ const RideRequest = ({data}) => {
     </DriversNavbar>
   )
 }
-export default RideRequest;
+export default RideRequestPage;
