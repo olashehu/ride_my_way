@@ -7,6 +7,7 @@ div.user-navigation-wrapper {
   justify-content: space-between;
   min-width: 390px;
   width: 100vw;
+  position: fixed;
 }
 
 .logo-wrapper {

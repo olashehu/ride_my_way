@@ -1,10 +1,7 @@
 
 
 :root {
-  /* primary/main color */
-  --clr-primary-5: hsl(205, 78%, 60%);
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
   --clr-white: #fff;
   --clr-green-dark: #44ce6f;
   --clr-green-light: hsl(125, 71%, 66%);
@@ -65,15 +62,6 @@ ul {
     padding: 1rem;
   }
 
-  div.testimonial__flex-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .testimonial-flex-content {
-    width: 100%;
-    margin: 2% 0;
-  }
 }
 
 @media screen and (min-width: 800px) {

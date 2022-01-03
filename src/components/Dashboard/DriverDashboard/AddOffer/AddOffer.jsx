@@ -1,6 +1,6 @@
 
 
-import DriversNavbar from "../../../../driversDashboard/DriversNavbar";
+import DriversNavbar from "../DriverDashboardNavigation/Secondary/DriversNavbar";
 import Button from "../../../../Utility/Button/Button";
 import Input from "../../../../Utility/TextInput/Input";
 

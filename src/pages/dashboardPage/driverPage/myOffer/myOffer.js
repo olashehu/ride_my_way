@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 import MyOffer from "../../../../components/Dashboard/DriverDashboard/MyOffer/MyOffer.jsx";
 import "../../../../components/Dashboard/DriverDashboard/MyOffer/MyOffer.css";
-import DriversNavbar from "../../../../driversDashboard/DriversNavbar";
+import DriversNavbar from "../../../../components/Dashboard/DriverDashboard/DriverDashboardNavigation/Secondary/DriversNavbar.js";
 import { displayOffer } from "../../../../reducers/offerSlice";
 
 const MyOfferPage = () => {

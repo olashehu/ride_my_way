@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { displayHistory } from '../../../../reducers/offerSlice';
-import DriversNavbar from '../../../../driversDashboard/DriversNavbar';
+import DriversNavbar from '../../../../components/Dashboard/DriverDashboard/DriverDashboardNavigation/Secondary/DriversNavbar';
 import "../../../../components/Dashboard/DriverDashboard/RideRequest/RideRequest.css"
 import RideRequest from '../../../../components/Dashboard/DriverDashboard/RideRequest/RideRequest';
 
@@ -35,14 +35,14 @@ const RideRequestPage = ({data}) => {
   }, [])
   return (
     <DriversNavbar>
-      <h1 style={{width: '80%', margin: '1% auto', textAlign:'center'}}>Ride request</h1>
-      <div
-        className='request-ride-container'
-      >
+      <h1 style={{ width: "80%", margin: "1% auto", textAlign: "center" }}>
+        Ride request
+      </h1>
+      <div className="request-ride-container">
         {userJoinRide.map((user, index) => {
           return (
             <RideRequest
-              key={user.historyId} 
+              key={user.historyId}
               historyId={user.historyId}
               userId={user.userId}
               firstName={user.firstName}
@@ -52,12 +52,10 @@ const RideRequestPage = ({data}) => {
               phone={user.phone}
               data={userJoinRide}
             />
-                  
-          )
-              
+          );
         })}
       </div>
     </DriversNavbar>
-  )
+  );
 }
 export default RideRequestPage;

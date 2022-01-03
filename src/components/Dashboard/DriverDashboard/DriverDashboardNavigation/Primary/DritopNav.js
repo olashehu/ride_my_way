@@ -1,11 +1,10 @@
-/** @format */
+
 
 import React from "react";
 import { useSelector } from "react-redux";
 
 import "./DritopNav.css";
-// import "./DriversNavbar.css";
-import HamburgerIcon from "../icons/HamburgerIcon";
+import HamburgerIcon from "../../../../../icons/HamburgerIcon";
 
 const DritopNav = (props) => {
   const { firstName } = useSelector((state) => state.driverAuth);

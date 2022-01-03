@@ -11,8 +11,7 @@ import RideOffer from './userdashboardPages/RideOffer';
 import Notification from './userdashboardPages/Notification';
 import DriverSignupPage from "./pages/signUp/driverSignup";
 import DriverLoginPage from './pages/Login/driverLogin';
-import DriverHistory from './driversPages/DriverHistory';
-import DriverSetting from './driversPages/DriverSetting';
+import DriverHistoryPage from './pages/dashboardPage/driverPage/history/history';
 import UserSetting from './userdashboardPages/UserSetting';
 import ProtectedRoute from './ProtectedRoute';
 import PrivateRoute from './PrivateRoute';
@@ -20,6 +19,7 @@ import EditOffer from './components/Dashboard/DriverDashboard/EditOffer/EditOffe
 import MyOfferPage from './pages/dashboardPage/driverPage/myOffer/myOffer';
 import RideRequestPage from './pages/dashboardPage/driverPage/rideRequest/RideRequest';
 import AddOfferPage from './pages/dashboardPage/driverPage/addOffer/addOffer';
+import RideCard from './Utility/RideCardComponent/RideCard';
 
 
 
@@ -41,11 +41,11 @@ const App = () => {
           <Route component={Notification} path="/user-notification" />
           <PrivateRoute component={AddOfferPage} path="/driver/add-offer" />
           <Route component={EditOffer} path="/edit-offer" />
-          <PrivateRoute component={DriverHistory} path="/driver/history" />
+          <PrivateRoute component={DriverHistoryPage} path="/driver/history" />
           <PrivateRoute component={MyOfferPage} path="/my-offer" />
-          <PrivateRoute component={DriverSetting} path="/driver/profile" />
           <PrivateRoute component={RideRequestPage} path="/ride-request" />
           <Route component={EditOffer} path="/edit-offer" />
+          {/* <Route component={RideCard} path="/ride-card" /> */}
         </Switch>
       </Router>
     </div>

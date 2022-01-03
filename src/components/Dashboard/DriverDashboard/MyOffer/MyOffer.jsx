@@ -13,10 +13,11 @@ const customStyles = {
     height: '100%',
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     transform: "translate(-0%, -0%)",
+    zIndex: '1000',
   },
 };
 
-const MyOffer = ({offerId, location, destination, price, handleDelete, openModal }) => {
+const MyOffer = ({offerId, location, destination, price, handleDelete, }) => {
   
   const [modalIsOpen, setIsOpen] = useState(false);
 

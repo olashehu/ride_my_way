@@ -1,43 +1,4 @@
-/* .edit-offer-container-modal {
-    position: fixed;
-    box-shadow: 0px 12px 30px 6px rgba(66, 113, 164, 0.104891);
-    background-color: rgba(255, 255, 255, 0.4);
-    width: 100%;
-    z-index: 1000;
-    height: 100%;
-}
-.edit-offer-container-modal h1{
-    text-align: center;
-    color: #000;
-}
 
-.edit-offer-inputs-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1% 0%;
-}
-.edit-offer-inputs-container label {
-    width: 17.4rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #f1f1f1;
-}
-
-.edit-offer-inputs-container input {
-    padding: 10px 16px;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-.update-action button {
-    margin: 10px 0px;
-    padding: 8px 30px;
-    font-size: 1.2rem;
-    border: 1px solid #44ce6f;
-}
-.update-action button:hover {
-    cursor: pointer;
-} */
 
 .edit-modal-input label {
     color: #000;

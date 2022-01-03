@@ -66,3 +66,16 @@
     color: #44ce6f;
     font-size: 1.2rem;
 }
+
+@media screen and (min-width: 768px) {
+  .signup-bg-text-wrapper {
+    top: 50%;
+    left: 30%;
+  }
+    .signup-bg-text-wrapper > h1 {
+      font-size: 3.5rem;
+    }
+    .signup-bg-text-wrapper > h4 {
+      font-size: 1.3rem;
+    }
+}
