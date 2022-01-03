@@ -1,0 +1,18 @@
+
+
+.edit-modal-input label {
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.update {
+    background-color: gold;
+}
+
+@media screen and (min-width: 768px) {
+    .edit-offer-wrapper{
+        margin: 0 auto;
+        width: 55%;
+    }
+}

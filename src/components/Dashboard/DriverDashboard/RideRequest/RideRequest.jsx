@@ -1,12 +1,15 @@
-/** @format */
+
+
 import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { displayHistory } from "../reducers/offerSlice";
 import { toast } from "react-toastify";
-import "./Accept_RejectOffer.css";
 
-const Accept_RejectOffer = ({
+import { displayHistory } from "../../../../reducers/offerSlice";
+import DriversNavbar from "../DriverDashboardNavigation/Secondary/DriversNavbar";
+import "./RideRequest.css";
+
+const RideRequest = ({
   historyId,
   userId,
   firstName,
@@ -93,11 +96,10 @@ const Accept_RejectOffer = ({
         </h4>
       </div>
       <div className="accept-reject-flex-container">
-        <h3 className=''>Location</h3>: <h3>{location}</h3>
+        <h3 className="">Location</h3>: <h3>{location}</h3>
       </div>
       <div className="accept-reject-flex-container">
-        <h3>Destination</h3>:{" "}
-        <h3>{destination}</h3>
+        <h3>Destination</h3>: <h3>{destination}</h3>
       </div>
       <div className="accept-reject-flex-container">
         <h3>Phone</h3>: <h3>{phone}</h3>
@@ -128,4 +130,4 @@ const Accept_RejectOffer = ({
   );
 };
 
-export default Accept_RejectOffer;
+export default RideRequest;

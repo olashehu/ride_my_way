@@ -1,10 +1,10 @@
-/** @format */
+
 
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import DritopNav from "./DritopNav";
-import "./DriversNavbar.css";
+import DritopNav from "../Primary/DritopNav";
+import "./DriversNavbar.css"
 
 const DriversNavbar = (props) => {
   const history = useHistory();

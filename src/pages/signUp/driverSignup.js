@@ -43,7 +43,6 @@ const DriverSignupPage = () => {
       history.push("/driver/add-offer");
       const notify = () => toast(data.message);
       notify();
-      console.log(data);
     } catch(err) {
        dispatch(driverSignupError({ userError: err.response.data.message }));
     }

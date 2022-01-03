@@ -44,7 +44,7 @@ const UserSignupPage = () => {
       history.push("/ride/offer");
       const notify = () => toast(data.message);
       notify();
-    } catch (error) {
+    } catch (err) {
       dispatch(signupError({ userError: err.response.data.message }));
     }
   };
