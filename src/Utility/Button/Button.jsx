@@ -11,8 +11,8 @@ const Button = ({ type, buttonText, ...props }) => {
 };
 
 Button.PropTypes = {
-    type: PropTypes.string.isRequired,
-    buttonText: PropTypes.string.isRequired
-}
+  type: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+};
 
 export default Button;

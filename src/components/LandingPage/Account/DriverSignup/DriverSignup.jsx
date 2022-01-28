@@ -1,13 +1,13 @@
-/** @format */
+
 
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import NavigationBar from "../../Header/NavigationBar";
 import Input from "../../../../Utility/TextInput/Input";
-import Footer from "../../Footer/Footer";
 import "./DriverSignup.css";
 import Button from "../../../../Utility/Button/Button";
+import NewFooter from "../../NewFooter/NewFooter";
 
 const DriverSignup = ({ handleChange, handleSubmit, data }) => {
   return (
@@ -16,14 +16,15 @@ const DriverSignup = ({ handleChange, handleSubmit, data }) => {
 
       <div className="driver-signup-bg-wrapper">
         <div className="signup-bg"></div>
-        <header className="signup-bg-text-wrapper">
-          <h1>Drive with us</h1>
+        <div className="signup-bg-text-wrapper">
+          <h1 className="driver-signup-text">Drive with us</h1>
           <h4 className="driver-signup-sub-header-text">
             Turn your vehicle into money making machine and earn big while driving.
           </h4>
-        </header>
+        </div>
       </div>
       <div className="form-wrapper">
+        <p className="form-detail">signup to drive</p>
         <form action="" onSubmit={handleSubmit}>
           <div className="signin-input-wrapper">
             <Input
@@ -95,8 +96,7 @@ const DriverSignup = ({ handleChange, handleSubmit, data }) => {
           </div>
         </form>
       </div>
-
-      <Footer></Footer>
+      <NewFooter />
     </>
   );
 };

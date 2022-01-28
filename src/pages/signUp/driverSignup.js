@@ -1,4 +1,4 @@
-/** @format */
+
 
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -28,7 +28,6 @@ const DriverSignupPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log("how");
       const { data } = await axios({
         method: "post",
         baseURL: "http://localhost:3000/v1/driver/signup",

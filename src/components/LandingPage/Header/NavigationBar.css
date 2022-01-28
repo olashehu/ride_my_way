@@ -100,11 +100,6 @@
       color: #000;
       transition: all 0.3s linear
     }
-
-    .social-icons a:hover {
-      border-bottom: 1px solid #fff;
-      padding-bottom: 10px;
-    }
   }
 
    @media screen and (max-width: 790px) {

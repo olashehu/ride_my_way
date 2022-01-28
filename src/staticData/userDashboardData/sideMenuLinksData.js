@@ -1,4 +1,4 @@
-/** @format */
+
 
 const menuLinks = [
   {
@@ -16,7 +16,13 @@ const menuLinks = [
   {
     id: 3,
     path: "/user/profile",
-    title: "Setting",
+    title: "Edit profile",
+    icon: <i class="fas fa-cog"></i>,
+  },
+  {
+    id: 4,
+    path: "/profile",
+    title: "My profile",
     icon: <i class="fas fa-cog"></i>,
   },
 ];

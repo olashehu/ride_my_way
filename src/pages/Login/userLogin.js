@@ -3,8 +3,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import jwtDecode from "jwt-decode";
-import { useDispatch, connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 toast.configure();
 
@@ -30,17 +29,15 @@ const UserLoginPage = () => {
         baseURL: "http://localhost:3000/v1/user/login",
         data: userLogin,
       });
-      const token = data.token;
-      localStorage.setItem("token", JSON.stringify(token));
-      const isToken = JSON.parse(localStorage.getItem("token"));
-      const decodedToken = jwtDecode(isToken);
-      localStorage.setItem("user", JSON.stringify(decodedToken));
-      dispatch(userLoggedIn(decodedToken.data));
+      const {token, userData } = data;
+      localStorage.setItem("user-token", JSON.stringify(token));
+      localStorage.setItem("user-info", JSON.stringify(userData));
+      dispatch(userLoggedIn(userData));
       history.push("/ride/offer");
       const notify = () => toast(data.message);
       notify();
-    } catch (error) {
-      dispatch(signupError({ userError: error.response.data.message }));
+    } catch (err) {
+      dispatch(signupError({ userError: err.response.data.message }));
     }
   };
 
@@ -53,4 +50,4 @@ const mapStateToProps = (state) => {
     auth: state.auth,
   };
 };
-export default connect(mapStateToProps)(UserLoginPage);
+export default UserLoginPage;

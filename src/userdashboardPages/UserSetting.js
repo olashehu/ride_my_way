@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector, connect } from 'react-redux';
 import axios from 'axios';
-import UsersSidebarNav from '../newdashboardUser/usersNavigationFolder/UsersSidebarNav';
+import UsersSidebarNav from '../components/Dashboard/UserDashboard/UserNavigation/UserSecondaryNav/UsersSidebarNav';
 import "./UserSetting.css";
-import { setCurrentUser } from '../reducers/authslice';
+import { setCurrentUser, } from '../reducers/authslice';
 
 const UserSetting = () => {
     const data = useSelector(state => state.auth);

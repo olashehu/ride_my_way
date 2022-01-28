@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 import Button from "../../../../Utility/Button/Button";
 import Input from "../../../../Utility/TextInput/Input";
-import Footer from "../../Footer/Footer";
 import NavigationBar from "../../Header/NavigationBar";
+import NewFooter from "../../NewFooter/NewFooter";
  
  
  const Login = ({handleChange, handleSubmit, data}) => {
@@ -47,7 +47,7 @@ import NavigationBar from "../../Header/NavigationBar";
           </div>
         </form>
       </div>
-      <Footer />
+      <NewFooter />
     </>
   );
 };
