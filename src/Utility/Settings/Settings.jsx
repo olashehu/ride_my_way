@@ -25,15 +25,8 @@ const Settings = (props) => {
                 onChange={onChange}
                 value={firstNameValue}
               />
-              {/* <input
-                type="text"
-                name={firstName}
-                id=""
-                onChange={onChange}
-                value={value}
-                placeholder="FirstName here..."
-              /> */}
             </div>
+
             <div className="input-info">
               <Input
                 htmlFor="lastName"
@@ -43,18 +36,8 @@ const Settings = (props) => {
                 onChange={onChange}
                 value={lastNameValue}
               />
-              {/* <input
-                type="text"
-                name={lastName}
-                id=""
-                onChange={onChange}
-                value={value}
-                placeholder="LastName here...."
-              /> */}
             </div>
-            {/* <div className="input-info">
-              <input type="email" name="email" id="" value={emailValue} disabled />
-            </div> */}
+            
             <div className="setting-button-wrapper">
               <button type="submit">Submit</button>
             </div>

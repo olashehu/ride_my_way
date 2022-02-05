@@ -1,13 +1,35 @@
 
 
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import HamburgerIcon from "../../../../../icons/HamburgerIcon";
 
 import "./UsersTopNavigation.css";
 
 const UsersTopNavigation = ({ togle }) => {
-  const {firstName} = useSelector((state) => state.auth);
+  const [name, setName] = useState('');
+  const fetchUser = async () => {
+    const token = JSON.parse(localStorage.getItem("user-token"))
+    try {
+      const { data } = await axios({
+        method: "get",
+        baseURL: "http://localhost:3000/v1/user",
+        headers: {
+          Authorization: `Beare ${token}`
+        }
+      });
+      const {firstName} = data.data;
+      setName(firstName);
+    } catch (error) {
+      console.error(error)
+    }
+    
+  }
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
   return (
     <div className="user-navigation-wrapper">
       <div className="logo-wrapper">
@@ -16,7 +38,7 @@ const UsersTopNavigation = ({ togle }) => {
       </div>
       <div className="profile-image-wrapper">
         <img src="/avatar.png" alt="profile-image" />
-        <span>{firstName}</span>
+        <span>{name}</span>
       </div>
       <button className="burgger-icon-wrapper" onClick={togle}>
         <HamburgerIcon />

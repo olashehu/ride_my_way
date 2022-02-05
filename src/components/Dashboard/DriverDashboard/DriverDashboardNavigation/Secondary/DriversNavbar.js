@@ -53,10 +53,16 @@ const DriversNavbar = (props) => {
                   <a>history</a>
                 </li>
               </Link>
-              <Link to="/driver/profile" className="link-container">
+              <Link to="/edit-profile" className="link-container">
                 <li className="links-items">
                   <i class="fas fa-cog"></i>
                   <a>Settings</a>
+                </li>
+              </Link>
+              <Link to="/user-profile" className="link-container">
+                <li className="links-items">
+                  <i class="fas fa-cog"></i>
+                  <a>My profile</a>
                 </li>
               </Link>
               <Link className="link-container" onClick={logout}>

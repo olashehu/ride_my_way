@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // import ProfileImage from '../../assest/PriofileImage'
 import "./myProfile.css";
 
-const MyProfile = ({ firstName, lastName, email }) => {
+const MyProfile = ({ firstName, lastName, email, phone, linkTo }) => {
   return (
     <div className="my-profile-wrapper">
       <div className="my-profile-inner-wrapper">
@@ -37,7 +37,7 @@ const MyProfile = ({ firstName, lastName, email }) => {
             <h2 className="contact-information-container">Contact information</h2>
             <div className="phone-container user-information">
               <p>Pnone:</p>
-              <p className="info-content-container phone-content">08099999999</p>
+              <p className="info-content-container phone-content">{phone}</p>
             </div>
             <div className="email-info-container user-information">
               <p>Email:</p>
@@ -63,7 +63,7 @@ const MyProfile = ({ firstName, lastName, email }) => {
           </div>
         </div>
 
-        <Link to="/user/profile" className="edit-profile-action">
+        <Link to={linkTo} className="edit-profile-action">
           Edit information
         </Link>
       </div>
