@@ -6,7 +6,7 @@ import Input from "../../../../Utility/TextInput/Input";
 import Button from "../../../../Utility/Button/Button";
 import "./Signup.css";
 import NavigationBar from "../../Header/NavigationBar";
-import Footer from "../../Footer/Footer";
+import NewFooter from "../../NewFooter/NewFooter";
 
 const UserSignup = ({ handleChange, handleSubmit, data }) => {
   return (
@@ -85,7 +85,7 @@ const UserSignup = ({ handleChange, handleSubmit, data }) => {
           </div>
         </form>
       </div>
-      <Footer />
+      <NewFooter />
     </>
   );
 };

@@ -1,7 +1,7 @@
 
 
 .driver-signup-bg-wrapper {
-  min-width: 25.875rem;
+  /* min-width: 25.875rem; */
   position: relative;
 }
 
@@ -12,6 +12,10 @@
   background-position: center;
   padding-top: 56.2%;
   position: relative;
+}
+
+.form-detail{
+  display: none;
 }
 
 .signup-bg-text-wrapper {
@@ -72,10 +76,23 @@
     top: 50%;
     left: 30%;
   }
-    .signup-bg-text-wrapper > h1 {
+    .driver-signup-text {
       font-size: 3.5rem;
     }
-    .signup-bg-text-wrapper > h4 {
+    .driver-signup-sub-header-text {
       font-size: 1.3rem;
     }
+}
+
+@media screen and (min-width: 1000px) {
+  .driver-signup-bg-wrapper {
+    display: none;
+  }
+  .form-detail{
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }

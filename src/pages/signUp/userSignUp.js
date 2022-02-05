@@ -1,9 +1,9 @@
-/** @format */
+
 
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { useDispatch, connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -39,7 +39,7 @@ const UserSignupPage = () => {
       localStorage.setItem("user-token", JSON.stringify(token));
       const getToken = JSON.parse(localStorage.getItem("user-token"));
       const decodedToken = jwtDecode(getToken);
-      localStorage.setItem("user-info", JSON.stringify(decodedToken));
+      localStorage.setItem("user-info", JSON.stringify(decodedToken.data));
       dispatch(setCurrentUser(decodedToken.data));
       history.push("/ride/offer");
       const notify = () => toast(data.message);
@@ -57,9 +57,4 @@ const UserSignupPage = () => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.auth,
-  };
-};
-export default connect(mapStateToProps)(UserSignupPage);
+export default UserSignupPage;

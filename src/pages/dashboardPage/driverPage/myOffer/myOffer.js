@@ -67,7 +67,7 @@ const MyOfferPage = () => {
 
   return (
     <DriversNavbar>
-      <h1 style={{ textAlign: "center" }}>My offer</h1>
+      <h1 style={{ textAlign: "center", paddingBottom: '20px'}}>My offer</h1>
       <div className="display-offer-container">
         {myOffer.map((item, index) => {
           return (

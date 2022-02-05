@@ -5,7 +5,7 @@ import HowItWorks from "../../components/LandingPage/HowItWorks/HowItWorks";
 import CarListing from "../../components/LandingPage/OurdriverSection/DriverSection";
 import HeroSection from "../../components/LandingPage/HeroSection/HeroSection";
 import Testimonial from "../../components/LandingPage/Testimonial/Testimonial";
-import Footer from "../../components/LandingPage/Footer/Footer";
+import NewFooter from "../../components/LandingPage/NewFooter/NewFooter";
 
 const Homepage = () => {
   return (
@@ -15,7 +15,7 @@ const Homepage = () => {
       <HowItWorks />
       <CarListing />
       <Testimonial />
-      <Footer />
+      <NewFooter />
     </>
   );
 };

@@ -3,10 +3,10 @@
 import { Link } from "react-router-dom";
 
 import Input from "../../../../Utility/TextInput/Input";
-import Footer from "../../Footer/Footer";
 import NavigationBar from "../../Header/NavigationBar";
 import Button from "../../../../Utility/Button/Button";
 import "./DriverLogin.css";
+import NewFooter from "../../NewFooter/NewFooter";
 
 const DriverLogin = ({ handleChange, handleSubmit, data }) => {
   return (
@@ -51,7 +51,7 @@ const DriverLogin = ({ handleChange, handleSubmit, data }) => {
           </div>
         </form>
       </div>
-      <Footer />
+      <NewFooter />
     </>
   );
 };

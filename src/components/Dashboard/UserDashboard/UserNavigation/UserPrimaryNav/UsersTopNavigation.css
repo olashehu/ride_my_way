@@ -13,13 +13,13 @@ div.user-navigation-wrapper {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
 }
 
 button.burgger-icon-wrapper {
   border: none;
   background-color: transparent;
-  padding-right: 0.785rem;
+  padding-right: 1rem;
 }
 button.burgger-icon-wrapper > svg {
   height: 1.5rem;
@@ -41,10 +41,14 @@ div.profile-image-wrapper img {
     display: none;
   }
 
+  .logo-wrapper {
+    padding-left: 2.6rem;
+  }
+
   div.profile-image-wrapper {
     display: flex;
     align-items: center;
-    margin-right: 2.5rem;
+    margin-right: 2.6rem;
   }
   div.profile-image-wrapper span {
     padding-left: .7rem;

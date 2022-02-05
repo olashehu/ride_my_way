@@ -1,12 +1,12 @@
 
-import axios from "axios";
-import { useState } from "react";
-import Swal from "sweetalert2";
-import { useSelector } from "react-redux";
+// import axios from "axios";
+// import { useState } from "react";
+// import Swal from "sweetalert2";
+// import { useSelector } from "react-redux";
 
-import Button from "../Utility/Button/Button";
+import Button from "../../../../Utility/Button/Button";
 
-const UserRide = ({
+const JoinRide = ({
   id,
   onUserCardFirstname,
   onUserCardLastName,
@@ -14,43 +14,41 @@ const UserRide = ({
   onUserCardDestination,
   onUserCardPrice,
   onUserCardPhone,
-  email,
+  onClick
 }) => {
-  const driverEmail = useSelector((state) => state.offer.offers[0].email);
-  const driverFirstName = useSelector((state) => state.offer.offers[0].firstName);
-  const [disableJoinOfferButton, setDisableJoinOfferButton] = useState(false);
+  // const driverEmail = useSelector((state) => state.offer.offers[0].email);
+  // const driverFirstName = useSelector((state) => state.offer.offers[0].firstName);
+  // const [disableJoinOfferButton, setDisableJoinOfferButton] = useState(false);
 
-  const handleJoinRide = async (id) => {
-    
-    setDisableJoinOfferButton(true);
-    const token = JSON.parse(localStorage.getItem("token"));
-    try {
-      const { data } = await axios({
-        method: "post",
-        baseURL: `http://localhost:3000/v1/user/join-ride/${id}`,
-        data: { driverEmail, driverFirstName },
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: `${data.message}`,
-        showConfirmButton: false,
-        timer: 1000,
-      });
-    } catch (error) {
-      console.log(error.response);
-      Swal.fire({
-        position: "middle",
-        icon: "error",
-        title: `${error.response.data.message}`,
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
-  };
+  // const handleJoinRide = async (id) => {
+  //   setDisableJoinOfferButton(true);
+  //   const token = JSON.parse(localStorage.getItem("token"));
+  //   try {
+  //     const { data } = await axios({
+  //       method: "post",
+  //       baseURL: `http://localhost:3000/v1/user/join-ride/${id}`,
+  //       data: { driverEmail, driverFirstName },
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "success",
+  //       title: `${data.message}`,
+  //       showConfirmButton: false,
+  //       timer: 1000,
+  //     });
+  //   } catch (error) {
+  //     Swal.fire({
+  //       position: "middle",
+  //       icon: "error",
+  //       title: `${error.response.data.message}`,
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //   }
+  // };
 
   return (
     <div className="join-ride-wrapper">
@@ -82,12 +80,11 @@ const UserRide = ({
         <Button
           type="button"
           buttonText="Join ride"
-          onClick={() => handleJoinRide(id)}
-          disabled={disableJoinOfferButton}
+          onClick={onClick}
         />
       </div>
     </div>
   );
 };
 
-export default UserRide;
+export default JoinRide;

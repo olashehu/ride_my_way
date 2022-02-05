@@ -2,20 +2,21 @@
 import { Link, useHistory } from "react-router-dom";
 import React, { useState } from "react";
 
-import UsersTopNavigation from "./UsersTopNavigation";
-import menuLinks from "../../staticData/userDashboardData/sideMenuLinksData";
+import UsersTopNavigation from "../UserPrimaryNav/UsersTopNavigation";
+import menuLinks from "../../../../../staticData/userDashboardData/sideMenuLinksData";
 import "./UsersSidebarNav.css";
-import LogoutIcon from "../../icons/LogoutIcon";
+import LogoutIcon from "../../../../../icons/LogoutIcon";
 
 const UsersSidebarNav = (props) => {
+
+  const history = useHistory();
   const [toggle, setToggle] = useState(false);
   const handleChange = () => {
     setToggle(!toggle);
   };
-  const history = useHistory();
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    localStorage.removeItem("user-token");
+    localStorage.removeItem("user-info");
     history.push("/user/login");
   };
   return (

@@ -1,7 +1,6 @@
 
 
 :root {
-  /* grey used for paragraphs */
   --clr-white: #fff;
   --clr-green-dark: #44ce6f;
   --clr-green-light: hsl(125, 71%, 66%);
@@ -11,8 +10,7 @@
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-/* ----*-------End of variables------*----------*/
-/*-------------Global styling-------------------*/
+
 html {
   box-sizing: border-box;
   line-height: 1.5;
@@ -34,7 +32,6 @@ a {
 ul {
   list-style-type: none;
 }
-/*-----End of global styling-------*/
 
 .img-container {
   margin: 0 auto;
@@ -45,7 +42,6 @@ ul {
   height: 40px;
 }
 
-/* Animation */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
