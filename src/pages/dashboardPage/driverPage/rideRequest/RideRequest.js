@@ -10,11 +10,12 @@ import RideRequest from '../../../../components/Dashboard/DriverDashboard/RideRe
 const RideRequestPage = ({data}) => {
   const dispatch = useDispatch();
   const joinRide = useSelector(state => state.offer.getHistory);
-  const [userJoinRide, setUseJoinRide] = useState(joinRide);
+  const [userJoinRide, setUserJoinRide] = useState(joinRide);
 
 
-  const getJoinOffer = async () => {
+  const getUserRequest = async () => {
     const token =JSON.parse(localStorage.getItem("driver-token"));
+
     try {
       const {data} = await axios({
         baseURL: "http://localhost:3000/v1/driver/ride-history",
@@ -23,7 +24,8 @@ const RideRequestPage = ({data}) => {
           Authorization: `Bearer, ${token}`
         }
       });
-      setUseJoinRide(data.data)
+      console.log(data.data);
+      setUserJoinRide(data.data)
       dispatch(displayHistory({ historyFromDatabase: data.data }));
     } catch (error) {
       console.log(error.response);
@@ -31,8 +33,9 @@ const RideRequestPage = ({data}) => {
   }
 
   useEffect(() => {
-    getJoinOffer()
+    getUserRequest();
   }, [])
+  
   return (
     <DriversNavbar>
       <h1 style={{ width: "80%", margin: "1% auto", textAlign: "center" }}>

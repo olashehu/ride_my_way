@@ -1,4 +1,4 @@
-
+/** @format */
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -9,37 +9,50 @@ import RideHistory from "../../../../components/Dashboard/UserDashboard/History/
 
 const UserRideHistoryPage = () => {
   const dispatch = useDispatch();
-  const [userHistory, setUserHistory] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(5);
+  const [historyData, setHistoryData] = useState([]);
+  const [paginate, setPaginate] = useState({});
 
-  const getHistoryData = async () => {
+  const getHistoryData = async (page) => {
+    
     try {
       const token = JSON.parse(localStorage.getItem("user-token"));
       const { data } = await axios({
-        baseURL: "http://localhost:3000/v1/user/ride-history",
+        baseURL: `http://localhost:3000/v1/user/ride-history?page=${page}`,
         method: "get",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
+
+      setHistoryData(data.data);
+      setPaginate(data.paginationData);
       dispatch(displayHistory({ historyFromDatabase: data.data }));
-      setUserHistory(data.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getHistoryData();
+    getHistoryData(1);
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = userHistory.slice(indexOfFirstPost, indexOfLastPost);
+  return (
+    <RideHistory
+      currentPost={historyData}
+      showingUntil={paginate.showingUntil}
+      showingFrom={paginate.showingFrom}
+      totalResults={paginate.totalDataLen}
+      totalPagesNum={paginate.totalPages}
+      currentPage={paginate.currentPage}
+      onButtonClick={(page) => {
+        window.scroll({
+          top: 0,
+          behavior: "smooth",
+        });
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  return <RideHistory currentPost={currentPosts} postsPerPage={userHistory.length} paginate={paginate}/>;
+        getHistoryData(page);
+      }}
+    />
+  );
 };
 export default UserRideHistoryPage;

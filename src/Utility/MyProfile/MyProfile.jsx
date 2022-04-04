@@ -36,7 +36,7 @@ const MyProfile = ({ firstName, lastName, email, phone, linkTo }) => {
           <div className="my-profile-contact-info-wrapper">
             <h2 className="contact-information-container">Contact information</h2>
             <div className="phone-container user-information">
-              <p>Pnone:</p>
+              <p>Phone:</p>
               <p className="info-content-container phone-content">{phone}</p>
             </div>
             <div className="email-info-container user-information">
