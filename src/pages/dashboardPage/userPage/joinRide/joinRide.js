@@ -1,33 +1,37 @@
-
+/** @format */
 
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useDispatch, connect } from "react-redux";
 import { displayOffer, errorInOffer } from "../../../../reducers/offerSlice";
 import Swal from "sweetalert2";
 
-
 import UsersSidebarNav from "../../../../components/Dashboard/UserDashboard/UserNavigation/UserSecondaryNav/UsersSidebarNav";
 import JoinRide from "../../../../components/Dashboard/UserDashboard/JoinRide/JoinRide";
 import "../../../../components/Dashboard/UserDashboard/JoinRide/JoinRide.css";
+import Pagination from "../../../../components/Pagination2/Pagination";
 
 const JoinRidePage = () => {
   const dispatch = useDispatch();
   const [userOffer, setUserOffer] = useState([]);
-  const getOffer = async () => {
+  const [pagination, setPagination] = useState({});
+
+  const getOffer = async (page) => {
     try {
       const token = JSON.parse(localStorage.getItem("user-token"));
       const { data } = await axios({
         method: "get",
-        baseURL: "http://localhost:3000/v1/driver/ride-offers",
+        baseURL: `http://localhost:3000/v1/driver/ride-offers?page=${page}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
+      
       dispatch(displayOffer({ offersFromDatabase: data.data }));
       setUserOffer(data.data);
+      setPagination(data.paginationData);
     } catch (error) {
-      dispatch(errorInOffer({offerError: error.response.data.message}));
+      dispatch(errorInOffer({ offerError: error.response.data.message }));
     }
   };
 
@@ -61,9 +65,9 @@ const JoinRidePage = () => {
   };
 
   useEffect(() => {
-    getOffer();
+    getOffer(1);
   }, []);
-
+  
   return (
     <UsersSidebarNav>
       <h2 className="join-ride-header-wrapper">Available ride</h2>
@@ -79,11 +83,28 @@ const JoinRidePage = () => {
               onUserCardDestination={user_card.destination}
               onUserCardPrice={user_card.price}
               onUserCardPhone={user_card.phone}
-              onClick={() => handleJoinRide(user_card.offerId, user_card.email, user_card.firstName)}
+              onClick={() =>
+                handleJoinRide(user_card.offerId, user_card.email, user_card.firstName)
+              }
             />
           );
         })}
       </div>
+      <Pagination
+        showingUntil={pagination.showingUntil}
+        showingFrom={pagination.showingFrom}
+        totalResults={pagination.totalResults}
+        totalPagesNum={pagination.totalPages}
+        currentPage={pagination.currentPage}
+        onButtonClick={(page) => {
+          window.scroll({
+            top: 0,
+            behavior: "smooth",
+          });
+
+          getOffer(page);
+        }}
+      />
     </UsersSidebarNav>
   );
 };

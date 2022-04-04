@@ -11,8 +11,8 @@ const DriverHistoryPage = () => {
   const state = useSelector((state) => state.offer.getHistory);
   const dispatch = useDispatch();
   const [driverHistory, setDriverHistory] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(7);
+  const [pagination, setPagination] = useState({});
+
   const getHistoryData = async () => {
     try {
       const token = JSON.parse(localStorage.getItem("driver-token"));
@@ -33,18 +33,10 @@ const DriverHistoryPage = () => {
     getHistoryData();
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = driverHistory.slice(indexOfFirstPost, indexOfLastPost);
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
-    <History
-      currentPosts={currentPosts}
-      postsPerPage={postsPerPage}
-      totalPosts={driverHistory.length}
-      paginate={paginate}
-    />
+    <>
+      <History currentPosts={driverHistory} />
+    </>
   );
 };
 

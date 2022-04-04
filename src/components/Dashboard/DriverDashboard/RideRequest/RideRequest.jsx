@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 import { displayHistory } from "../../../../reducers/offerSlice";
-import DriversNavbar from "../DriverDashboardNavigation/Secondary/DriversNavbar";
 import "./RideRequest.css";
 
 const RideRequest = ({
@@ -32,16 +31,23 @@ const RideRequest = ({
   const handleAccept = async (historyId) => {
     setAccept(!accept);
     SetStartTrip(!startTrip);
+    const token = JSON.parse(localStorage.getItem("driver-token"));
     try {
       const status = { status: "Accepted" };
-      const result = await axios({
+      const {data} = await axios({
         baseURL: `http://localhost:3000/v1/driver-test/${historyId}`,
         method: "put",
         data: { status, email, userName },
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       });
+      console.log(data);
       const notify = () => toast(data.message);
       notify();
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleStartTrip = async (historyId) => {
@@ -49,7 +55,7 @@ const RideRequest = ({
     setEndtrip(!endTrip);
     try {
       const status = { "status": "Trip started" };
-      const result = await axios({
+      await axios({
         baseURL: `http://localhost:3000/v1/driver-test/${historyId}`,
         method: "put",
         data: { status },
@@ -62,7 +68,7 @@ const RideRequest = ({
   const handleEndtrip = async(historyId) => {
    try {
       const status = { status: "Trip completed" };
-      const result = await axios({
+      await axios({
         baseURL: `http://localhost:3000/v1/driver-test/${historyId}`,
         method: "put",
         data: { status },
@@ -73,17 +79,21 @@ const RideRequest = ({
   }
 
    const handleReject = async (id) => {
+     const token = JSON.parse(localStorage.getItem('driver-token'));
      const newHistory = data.filter((item) => item.historyId !== id);
      const status = { status: "Rejected" };
      dispatch(displayHistory({ historyFromDatabase: newHistory }));
      try {
-       const res = await axios({
+       await axios({
          baseURL: `http://localhost:3000/v1/driver/offer-decline/${id}`,
          method: "put",
          data: { status, email, userName },
+         headers: {
+           Authorization: `Bearer ${token}`
+         }
        });
      } catch (error) {
-       console.log(error);
+       console.error(error);
      }
    };
 

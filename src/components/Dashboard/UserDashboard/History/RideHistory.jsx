@@ -1,47 +1,20 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import moment from "moment";
-// import { useDispatch } from "react-redux";
+/** @format */
+
 import moment from "moment";
 
 import UsersSidebarNav from "../UserNavigation/UserSecondaryNav/UsersSidebarNav";
-import Pagination from "../../../../userdashboardPages/Pagination";
 import "../../../../tablecomponent/Table.css";
+import Pagination from "../../../Pagination2/Pagination";
 
-
-const RideHistory = ({currentPost, totalPosts, postsPerPage, paginate}) => {
-  // const dispatch = useDispatch();
-  // const [userHistory, setUserHistory] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage] = useState(5);
-
-  // const getHistoryData = async () => {
-  //   try {
-  //     const token = JSON.parse(localStorage.getItem("user-token"));
-  //     const { data } = await axios({
-  //       baseURL: "http://localhost:3000/v1/user/ride-history",
-  //       method: "get",
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-  //     dispatch(displayHistory({ historyFromDatabase: data.data }));
-  //     setUserHistory(data.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getHistoryData();
-  // }, []);
-
-  // const indexOfLastPost = currentPage * postsPerPage;
-  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  // const currentPosts = userHistory.slice(indexOfFirstPost, indexOfLastPost);
-
-  // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+const RideHistory = ({
+  currentPost,
+  showingUntil,
+  showingFrom,
+  totalResults,
+  totalPagesNum,
+  currentPage,
+  onButtonClick,
+}) => {
   return (
     <UsersSidebarNav>
       <div className="table-container">
@@ -68,7 +41,7 @@ const RideHistory = ({currentPost, totalPosts, postsPerPage, paginate}) => {
                   <td data-label="Destination">{offer.destination}</td>
                   <td data-label="Price">{offer.price}</td>
                   <td data-label="Status">
-                    <span className="text_open">{data.status}</span>
+                    <span className="text_open">{offer.status}</span>
                   </td>
                 </tr>
               );
@@ -76,9 +49,12 @@ const RideHistory = ({currentPost, totalPosts, postsPerPage, paginate}) => {
           </tbody>
         </table>
         <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={totalPosts}
-          paginate={paginate}
+          showingUntil={showingUntil}
+          showingFrom={showingFrom}
+          totalResults={totalResults}
+          totalPagesNum={totalPagesNum}
+          currentPage={currentPage}
+          onButtonClick={onButtonClick}
         />
       </div>
     </UsersSidebarNav>

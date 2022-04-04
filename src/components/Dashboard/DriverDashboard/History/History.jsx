@@ -4,9 +4,9 @@ import moment from "moment";
 
 import DriversNavbar from "../DriverDashboardNavigation/Secondary/DriversNavbar";
 import "../../../../tablecomponent/Table.css"
-import Pagination from "../../../../userdashboardPages/Pagination"
+// import Pagination from "../../../../userdashboardPages/Pagination"
 
-const History = ({currentPosts, postsPerPage, totalPosts, paginate}) => {
+const History = ({currentPosts}) => {
   return (
     <DriversNavbar>
       <div className="table-container">
@@ -40,11 +40,6 @@ const History = ({currentPosts, postsPerPage, totalPosts, paginate}) => {
             })}
           </tbody>
         </table>
-         <Pagination
-            postsPerPage={postsPerPage}
-            totalPosts={totalPosts}
-            paginate={paginate}
-          />
       </div>
     </DriversNavbar>
   );
